@@ -1,0 +1,152 @@
+/* pages/coupon/coupon.wxss */
+page {
+  background: #F9F9F9;
+}
+.coupon-container {
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+
+.coupon-item-box {
+  display: flex;
+  flex-direction: row;
+  height: 257rpx;
+  width: 727rpx;
+  margin: 24rpx 5rpx 0 18rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.coupon-item-box image{
+  width: 100%;
+  height: 100%;
+}
+
+.coupon-left {
+  position: absolute;
+  color: #E72C2C;
+  top: 13%;
+  left: 0;
+  width: 240rpx;
+  height: 240rpx;
+  text-align: center;
+}
+
+.coupon-left-discount {
+  position: absolute;
+  color: #E72C2C;
+  top: 1%;
+  left: 0;
+  width: 230rpx;
+  height: 230rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.discount-syboml {
+  font-size: 30rpx;
+}
+
+.coupon-left-discount {
+  /* font-size: 114rpx; */
+}
+
+.coupon-left-price {
+  font-size: 114rpx;
+}
+
+.discount_eight {
+  font-size: 89rpx;
+}
+
+.coupon-syboml {
+  font-size: 30rpx;
+}
+
+.coupon-right-box {
+  position: absolute;
+  top: 13%;
+  left: 30%;
+  padding-left: 25rpx;
+}
+
+.coupon-title {
+  margin-left: 20rpx;
+  padding-bottom: 15rpx;
+  font-size:36rpx;
+  color: #FFCB91;
+  letter-spacing: 1rpx;
+}
+
+.coupon-title-discount {
+  margin-left: 20rpx;
+  padding-bottom: 15rpx;
+  height:50rpx;
+  font-size:36rpx;
+  line-height:50rpx;
+  color:#8DB0FF;
+}
+
+.coupon-time-box {
+  width: 465rpx;
+  font-size: 22rpx;
+  color: #7D7D7D;
+}
+
+.coupon-expire {
+  color: #E72C2C;
+}
+
+.gouse {
+  position: relative;
+  font-size: 24rpx;
+  padding: 4rpx 20rpx;
+  border-top: 3rpx dashed #828282;
+  margin-top: 40rpx;
+}
+
+.coupon-right-box .gouse .use-left {
+  height:22rpx;
+  font-size:16rpx;
+  line-height:22rpx;
+  color:rgba(30,30,30,1);
+}
+
+.gouse .use-right-coupon {
+  position: absolute;
+  right: 26rpx;
+  bottom: 5rpx;
+  height:22rpx;
+  font-size:16rpx;
+  line-height:22rpx;
+  color:#FFCB91;
+}
+
+.gouse .use-right-discount {
+  position: absolute;
+  right: 26rpx;
+  bottom: 5rpx;
+  height:22rpx;
+  font-size:16rpx;
+  line-height:22rpx;
+  color:#8DB0FF;
+}
+
+.no-coupon {
+  text-align: center;
+  background: #F9F9F9;
+}
+
+.no-coupon image{
+  width: 100%;
+  height: 340rpx;
+  margin-top: 148rpx;
+}
+
+.no-coupon text{
+  margin-top: 103rpx;
+  font-size: 28rpx;
+  color:#828282;
+}

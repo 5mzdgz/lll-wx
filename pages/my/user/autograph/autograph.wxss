@@ -1,0 +1,30 @@
+/* pages/my/autograph/autograph.wxss *//* pages/my/nick/nick.wxss */
+page{
+  background: #f6f6f6;
+}
+
+.set-text {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 20rpx 26rpx;
+  font-size: 28rpx;
+  color: #929090;
+}
+
+textarea{
+  width: 100%;
+  background: #fff;
+  margin-top: 10rpx;
+  line-height: 50rpx;
+  padding: 0 26rpx;
+  font-size: 30rpx;
+}
+
+button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  background: #e72c2c;
+  border-radius: 0;
+}

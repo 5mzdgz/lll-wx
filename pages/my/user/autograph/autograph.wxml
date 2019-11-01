@@ -1,0 +1,20 @@
+<!--pages/my/autograph/autograph.wxml-->
+
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="个性签名"
+>
+</navigation>
+<view class="content">
+
+ <view class="section">
+    <form bindsubmit="authFormSubmit">
+    <text class="set-text">有兴趣的个人介绍会吸引更多粉丝哦</text>
+      <textarea placeholder-class='place' placeholder="请填写个人签名" value="{{autograph}}" name="textarea"/>
+      <button form-type="submit">确认修改</button>
+    </form>
+  </view>
+
+</view>

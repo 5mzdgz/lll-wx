@@ -1,0 +1,13 @@
+<template name="products">
+  <view class="product-list">
+    <block wx:for="{{categoryDataArr}}" wx:key="index">
+      <view class="product-item" bindtap="onProductItems" data-id="{{item.id}}">
+        <image class="product-item-img" mode="aspectFill" src="{{item.defaultImgUrl}}" />
+        <view class="product-item-bottom">
+          <view class="product-title">{{item.title}}</view>
+          <view class="product-price">￥{{item.nowPrice}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

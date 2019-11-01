@@ -1,0 +1,57 @@
+<!--pages/my/recharge/recharge.wxml-->
+<!--pages/my/wallet/wallet.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="充值"
+>
+</navigation>
+<view class="content">
+  <view class="container recharge-container">
+    <view class="cash-box">
+      <view class="cash-left">
+        <text class="title">充值方式</text>
+        <view class="conter">
+          <image class="wx-img" src="https://img.laoliangli.com/label/wallet/money_icon.png"></image>
+          <text class="sub">微信充值</text>
+        </view>
+      </view>
+      <!-- <view class="cash-right">
+        <image class="mark" src="/image/cash/mark_icon.png"></image>
+        <text class="account">6777999988887777</text>
+        <image class="arrow-right" src="https://img.laoliangli.com/label/my/arrow_right.png"></image>
+      </view> -->
+    </view>
+    <view class="recharge-box">
+      <form bindsubmit="bindFormSubmit">
+        <view class="title">充值金额</view>
+        <view class="recharge-number">
+          <text class='symbol'>￥</text>
+          <input class="moneyInput" type='digit' name="money" focus='{{focus}}' maxlength='12' value="{{money}}"/>
+        </view>
+        <button form-type='submit' disabled='{{disabled}}'>下一步</button>
+      </form>
+    </view>
+    <!-- <view class="hidan-box" wx:if="{{isShow}}"></view> -->
+    <!-- <view class="show-box" wx:if="{{isShow}}">
+      <view class="header">
+        <text class="colse" catchtap="hiddanTap">×</text>
+        <text class="title">请输入支付密码</text>
+      </view>
+      <view class="body-box">
+        <view class="body-name">充值</view>
+        <view class="money-box">
+          <text class="symbol">￥</text>
+          <text class="money">999.10</text>
+        </view>
+        <view class="tabel">
+          <view class='td' wx:for="{{6}}" wx:key="unique" wx:for-index="i">
+            <view class="text" wx:if="{{passwordValue.length>i}}"></view>
+          </view>
+        </view>
+        <input class="passInput" type="number" password="true" focus='{{payFocus}}' maxlength="6" bindinput="passwordTap" />
+      </view>
+    </view> -->
+  </view>
+</view>
+

@@ -1,0 +1,65 @@
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{navTitle}}"
+>
+</navigation>
+<view class="content">
+
+  <view class="container main-container">
+    <view class="order-top-box" wx:for="{{navbar}}" data-index="{{index}}" wx:key="unique" bindtap="navbarTap">
+      <text class="{{currentTab==index ? 'selected' : ''}}">{{item}}</text>
+    </view>
+  </view>
+
+  <block hidden="{{!loadingHidden}}" wx:for="{{checkedArr}}" wx:for-item="item" wx:key="unique">
+    <view class="verify-item" data-id="{{item.id}}" bindtap="orderDetailTap">
+      <view class="verify-top">
+        <text class="verify-number">维修单号：{{item.orderNumber}}</text>
+        <text class="verify-status {{item.status=='待支付'||item.status=='已完成'?'adopt':''}}">{{item.status}}</text>
+      </view>
+      <view class="verify-bottom">
+        <!-- <image src="/image/maintain/gold.png"></image> -->
+        <view class="verify-info">
+          <view class="checked-title">{{item.mat}}</view>
+          <view class="checked-item" wx:for="{{item.mcList}}" wx:for-item="mcListItem" wx:key="unique">
+            <text class="checked-left">{{mcListItem.serviceName}}<text class="service-subName">{{mcListItem.serviceSubName}}</text></text>
+            <text class="checked-right">x{{mcListItem.qty}}</text>
+          </view>
+        </view>
+        <view class="checked-total">
+          <text class="service-count">共{{item.mcList.length}}项服务</text>
+          <text>合计：</text>
+          <text wx:if="{{!item.noTotal}}">
+            <text class="symbol">￥</text>
+            <text class="price">{{item.total}}</text>
+          </text>
+          <text class="no-total" wx:else>{{item.noTotal}}</text>
+        </view>
+      </view>
+      <view class="btn-box">
+        <button class="btn" wx:if="{{item.checkStatus==1&&item.orderStatus==0}}" disabled="{{disabled}}" data-item="{{item}}" catchtap="checkPayTap">去支付</button>
+      <button class="btn" wx:if="{{!item.uploadImgs}}" data-item="{{item}}" catchtap="goUploadImgsTap">上传照片</button>
+      <button class="btn" wx:if="{{item.orderStatus==3}}" data-id="{{item.id}}" catchtap="goConfrimTap">确认收货</button>
+      <button class="btn" wx:if="{{item.orderStatus==4 && item.isComment != 1}}" data-item="{{item}}" catchtap="goOpinionTap">意见反馈</button>
+      <!-- <button class="btn delete-btn" wx:if="{{item.orderStatus==4||item.orderStatus==5||item.checkStatus==2}}" data-id="{{item.id}}" catchtap="goDeleteTap">删除订单</button> -->
+      </view>
+    </view>
+  </block>
+
+  <view class='mask-layer' wx:if="{{isOpinion}}"></view>
+  <view class="opinion-success" wx:if="{{isOpinion}}">
+    <image class="opinion" src="https://img.laoliangli.com/label/maintain/order_opinion.png"></image>
+    <button class="opinion-btn" bindtap="recoiveTap">立即领取</button>
+    <icon type='cancel' size='40' color='#fff' catchtap="closeOpinionTap"></icon>
+  </view>
+
+  <view class="order-empty" wx:if="{{checkedArr.length==0}}">
+    <image class="order-empty-img" src="https://img.laoliangli.com/label/common/empty_order.png"/>
+    <text class="order-empty-text">还没有信息，快去保养服务吧~</text>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+      加载中...
+  </loading>
+</view>

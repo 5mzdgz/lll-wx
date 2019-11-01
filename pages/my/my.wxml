@@ -1,0 +1,129 @@
+<!-- <import src="coupon/coupon.wxml" />
+<import src="about/about.wxml" />
+<import src="user/user.wxml" /> -->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{tabbarTitle}}"
+>
+</navigation>
+<view class="content">
+
+  <view class="container my-container">
+    <view class="my-header" bindtap="changeUserInfo">
+      <view class="header-box">
+        <image class="author-img" src="{{headImgUrl?headImgUrl:'https://img.laoliangli.com/label/my/authorImg_icon.png'}}"/>
+        <view class="middle">
+          <view class="top">
+            <text class="my-login">{{userName!='null'&&userName?userName:'设置昵称'}}</text>
+            <image class="list-right-img" wx:if="{{grade > 0}}" src="https://img.laoliangli.com/label/my/vip_icon.png"/>
+          </view>
+          <view class="bottom" wx:if="{{autograph!='null'&&autograph}}">{{autograph}}</view>
+        </view>
+        <view class="right">
+          <text>设置</text>
+          <text class="iconfont icon-xiangyou"></text>
+        </view>
+      </view>
+    </view>
+
+    <canvas style="width: 462px;height: 822px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+    
+    <view class="floating-box" wx:if="{{grade > 0}}">
+      <!-- <view class="items-box"> -->
+        <navigator class="items-box" url="../my/wallet/wallet">
+        <image src="https://img.laoliangli.com/label/my/wallet_icon.png"/>
+        <text>钱包</text>
+        </navigator>
+      <!-- </view> -->
+      <view class="dashed"></view>
+      <!-- <view class="items-box invi-box"> -->
+      <navigator class="items-box invi-box" url="../my/invitation/invitation">
+        <image src="https://img.laoliangli.com/label/my/invitation_icon.png"/>
+        <text>邀请有礼</text>
+      </navigator>
+      <!-- </view> -->
+    </view>
+    <navigator url="../my/invitation/invitation">
+      <image class="invitation" wx:if="{{grade > 0}}" src="https://img.laoliangli.com/label/my/invitation.png"/>
+    </navigator>
+    <navigator url="../my/set/reset-password/reset-password?flag=3">
+      <image class="add-vip" wx:if="{{grade <= 0}}" src="https://img.laoliangli.com/label/my/add_vip.png"/>
+    </navigator>
+    <view class="list-box order-box" bindtap="orderTap">
+      <view class="left-order">
+        <image class="list-icon" src="https://img.laoliangli.com/label/my/order_icon.png"/>
+        <text class="order-text">我的订单</text>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+
+    <view class="list-box payment-box">
+      <view class="list-item" wx:for="{{orderStatusArr}}" data-index="{{index}}" wx:key="unique" bindtap="orderStatusTap">
+        <image class="no-pay" src="{{item.statusImgUrl}}"/>
+        <view>{{item.statusName}}</view>
+      </view>
+    </view>
+
+    <view class="maintain-box">
+      <view class="maintain-top" bindtap="maintainTap">
+        <view class="maintain-top-left">
+          <text class="iconfont icon-erhuan"></text>
+          <text>首饰保养</text>
+        </view>
+        <image src="https://img.laoliangli.com/label/my/maintain_nav.png"></image>
+      </view>
+      <view class="maintain-btm">
+        <block wx:for="{{maintainArr}}" wx:for-item="maintain" wx:key="unique">
+          <view class="maintain-item" data-index="{{index}}" bindtap="maintainItemTap">
+            <image src="{{maintain.iconImg}}"></image>
+            <view class="nav-title">{{maintain.navTitle}}</view>
+          </view>
+          <view class="dashed" wx:if="{{index!=2}}"></view>
+        </block>
+      </view>
+    </view>
+
+    <view class="uitls-box">
+      <view class="uitl-top">
+        <image src="https://img.laoliangli.com/label/my/set_icon.png"/>
+        <text>常用工具</text>
+      </view>
+      <view class="uitl-body">
+        <view class="body-item">
+          <view class="uitl address" bindtap="address">
+            <image class="img address-img" src="https://img.laoliangli.com/label/my/address_icon.png"/>
+            <view>收货地址</view>
+          </view>
+          <view class="uitl" bindtap="opinion">
+            <image class="img" src="https://img.laoliangli.com/label/my/opinion_icon.png"/>
+            <view>意见反馈</view>
+          </view>
+        </view>
+        <view class="dashed"></view>
+        <view class="body-item">
+          <view class="uitl" bindtap="coupon">
+            <image class="img" src="https://img.laoliangli.com/label/my/coupon_icon.png"/>
+            <view>优惠券</view>
+          </view>
+          <view class="uitl" bindtap="handleContact">
+            <image class="img" src="https://img.laoliangli.com/label/my/info_icon.png"/>
+            <text>联系客服</text>
+          </view>
+        </view>
+        <view class="dashed"></view>
+        <view class="body-item">
+          <view class="uitl" bindtap="collection">
+            <image class="img" src="https://img.laoliangli.com/label/my/collection_icon.png"/>
+            <view>我的收藏</view>
+          </view>
+          <view class="uitl" bindtap="about">
+            <image class="img" src="https://img.laoliangli.com/label/my/about_icon.png"/>
+            <view>关于我们</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

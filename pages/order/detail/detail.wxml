@@ -1,0 +1,193 @@
+<!--pages/order/detail/detail.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="订单详情"
+>
+</navigation>
+<view class="content">
+  <view class="container order-detail-container">
+    <view class="status-box">
+      <image class="status-banner" src="https://img.laoliangli.com/label/common/banner_order.png"/>
+      <view class="status-left" wx:if="{{orderData.status==0}}">
+        <view class="status-title">待支付</view>
+        <text class="status-subtitle">订单超过60分钟自动取消，请在{{min}}分{{sec}}秒内完成支付</text>
+      </view>
+       <view class="status-left" wx:if="{{orderData.status==1}}">
+        <view class="status-title">待发货</view>
+        <text class="status-subtitle">商家正在打包，请耐心等待···</text>
+      </view>
+       <view class="status-left" wx:if="{{orderData.status==2}}">
+        <view class="status-title">待收货</view>
+        <text class="status-subtitle">商家已发货，请耐心等待···</text>
+      </view>
+      <view class="status-left" wx:if="{{orderData.status==3}}">
+        <view class="status-title">已完成</view>
+        <text class="status-subtitle">交易已完成</text>
+      </view>
+      <view class="status-left" wx:if="{{orderData.status==4}}">
+        <view class="status-title">待处理</view>
+      </view>
+      <view class="status-left" wx:if="{{orderData.status==5}}">
+        <view class="status-title">已处理</view>
+      </view>
+      <image class="status-icon" wx:if="{{orderData.status==0}}" src="https://img.laoliangli.com/label/common/payout.png"/>
+      <image class="status-icon" wx:if="{{orderData.status==1}}" src="https://img.laoliangli.com/label/common/shipped.png"/>
+      <image class="status-icon" wx:if="{{orderData.status==2}}" src="https://img.laoliangli.com/label/common/received.png"/>
+      <image class="status-icon" wx:if="{{orderData.status==3}}" src="https://img.laoliangli.com/label/common/finished.png"/>
+    </view>
+
+    <view class="address-box">
+      <view class="address-user-info">
+        <image class="address-icon" src="https://img.laoliangli.com/label/my/address_icon.png"/>
+        <text class="address-user-name">收货人：{{orderData.userName}}</text>
+        <text class="address-phone">{{orderData.userPhone}}</text>
+      </view>
+      <view class="address-info">{{orderData.province}} {{orderData.city}} {{orderData.area}} {{orderData.address}}</view>
+    </view>
+
+    <view class="order-info">
+      <view class="order-info-box">
+        <view class="order-info-top">
+          <view class="order-icon"></view>
+          <text class="order-info-title order-title">订单信息</text>
+        </view>
+        <view class="order-info-middle">
+          <view class="order-info-item">
+            <text class="order-info-title">订单编号：</text>
+            <text class="order-info-right">{{orderData.orderNumber}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.shippingCode}}">
+            <text class="order-info-title">物流方式：</text>
+            <text class="order-info-right">{{orderData.shippingName}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.shippingCode}}">
+            <text class="order-info-title">物流单号：</text>
+            <text class="order-info-right">{{orderData.shippingCode}}</text>
+            <!-- <text class="see-shipping" catchtap="seeShippingTap" data-text="{{orderData.shippingUrl}}">查看物流</text> -->
+            <text class="copy-text" catchtap="copyText" data-text="{{orderData.shippingCode}}">复制物流单号</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.paymentTime}}">
+            <text class="order-info-title">支付方式：</text>
+            <text class="order-info-right">{{orderData.paymentMethod==1?'微信支付':'钱包支付'}}</text>
+          </view>
+          <view class="order-info-item">
+            <text class="order-info-title">创建时间：</text>
+            <text class="order-info-right">{{orderData.createTime}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.paymentTime}}">
+            <text class="order-info-title">付款时间：</text>
+            <text class="order-info-right">{{orderData.paymentTime}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.shippingTime}}">
+            <text class="order-info-title">发货时间：</text>
+            <text class="order-info-right">{{orderData.shippingTime}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.finishTime}}">
+            <text class="order-info-title">收货时间：</text>
+            <text class="order-info-right">{{orderData.finishTime}}</text>
+          </view>
+          <view class="order-info-item" wx:if="{{orderData.userMsg}}">
+            <text class="order-info-title">我的备注：</text>
+            <text class="order-info-right order-info-msg">{{orderData.userMsg}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="order-btn" wx:if="{{orderData.status==0}}">
+        <view class="order-cancel" bindtap="cancelTap">取消订单</view>
+        <view class="order-confrim" catchtap="continuePayTap">继续支付</view>   
+      </view>
+      <view class="order-btn" wx:if="{{orderData.status==1}}">
+        <button class="order-cancel" open-type="contact" bindcontact="handleContact">联系客服</button>
+        <button class="order-confrim" open-type="contact" bindtap="refundTap">申请退款</button>   
+      </view>
+      <view class="order-btn" wx:if="{{orderData.status==2}}">
+        <button class="order-cancel" open-type="contact" bindcontact="handleContact">联系客服</button>
+        <view class="order-confrim" data-id="{{orderData.id}}" catchtap="confrimTap">确认收货</view>   
+      </view>
+      <view class="order-btn" wx:if="{{orderData.status==3}}">
+        <button class="order-cancel" open-type="contact" bindcontact="handleContact">联系客服</button>
+        <button class="order-confrim" open-type="contact" bindtap="aftermarketTap">申请售后</button>   
+      </view>
+      <button class="order-btn link-server" open-type="contact" wx:if="{{orderData.status==4}}">联系客服</button>
+      <button class="order-btn link-server" open-type="contact" wx:if="{{orderData.status==5}}">联系客服</button>
+    </view>
+
+    <view class="product-box">
+      <view class="product-item" wx:for="{{productList}}" wx:for-item="list" wx:key="unipue">
+        <image class="product-item-img" src="{{list.imgUrl}}" />
+        <view class="product-info">
+          <view class="product-title">{{list.title}}</view>
+          <block wx:for="{{list.attributesMap}}" wx:for-index="key" wx:key="unipue">
+            <view class="product-size">{{key}}：{{item}}</view>
+          </block>
+        </view>
+        <view class="product-price">
+          <view class="price-top">
+            <text class="symbol">￥</text>
+            <text class="item-price">{{list.price}}</text>
+          </view>
+          <view class="price-count">x{{list.commodityNum}}</view>
+        </view>
+      </view>
+
+      <view class="product-total-box">
+        <view class="total-item">
+          <text class="total-item-left">商品总额</text>
+          <text class="total-item-right">
+            <text class="symbol">￥</text>
+            <text class="item-right-price">{{orderData.total}}</text>
+          </text>
+        </view>
+        <view class="total-item">
+          <text class="total-item-left">运费</text>
+          <text class="total-item-right">
+            <text class="symbol">￥</text>
+            <text class="item-right-price">0.00</text>
+          </text>
+        </view>
+        <view class="total-item">
+          <text class="total-item-left">优惠</text>
+          <text class="total-item-right">
+            <text class="symbol">￥</text>
+            <text class="item-right-price">{{orderData.offer}}</text>
+          </text>
+        </view>
+      </view>
+
+      <view class="payment-amount">
+        <text class="payment-amount-left">金额合计</text>
+        <text class="payment-amount-right">
+          <text class="red-symbol">￥</text>
+          <text class="red-price">{{orderData.total}}</text>
+        </text>
+      </view>
+    </view>
+
+    <view class="hidan-box" wx:if="{{isShow}}"></view>
+      <view class="show-box" wx:if="{{isShow}}">
+        <view class="header">
+          <text class="colse" catchtap="closeTap">×</text>
+          <text class="title">请输入支付密码</text>
+        </view>
+        <form bindsubmit="formSubmit">
+        <view class="body-box">
+          <view class="body-name">支付</view>
+          <view class="money-box">
+            <text class="symbol">￥</text>
+            <text class="money">{{total}}</text>
+          </view>
+          <view class="phone">+86 {{sPhone}}</view>
+          <view class="short-message">
+            <input class="codeInput" type="number" name="code" value="{{code}}" maxlength='4' placeholder='请输入短信验证码'/>
+            <text class="right send" disabled='{{shortDisabled}}' bindtap='getVerificationCode'>{{codename}}</text>
+          </view>
+          <input class="passInput" type="text" name="payPassword" password="true" focus='{{payFocus}}' maxlength="16" placeholder-class='place' placeholder='请输入交易密码' />
+        </view>
+        <button class="pass-confrim" form-type="submit">确定</button>
+        </form>
+      </view>
+  </view>
+</view>

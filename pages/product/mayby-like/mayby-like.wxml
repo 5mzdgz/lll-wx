@@ -1,0 +1,28 @@
+<template name="maybyLike">
+  <view class="detail-like-box">
+      <view class="like-title">您可能喜欢</view>
+      <view class="detail-list-box">
+        <view class="like-list-box">
+          <view class="list-img">
+            <image src="/image/product/product1.png" />
+          </view>
+          <view class="product-title">简约纯银925钻石锁骨链</view>
+          <view class="product-price">￥777.6</view>
+        </view>
+        <view class="like-list-box">
+          <view class="list-img">
+            <image src="/image/product/product1.png" />
+          </view>
+          <view class="product-title">简约纯银925钻石锁骨链</view>
+          <view class="product-price">￥777.6</view>
+        </view>
+        <view class="like-list-box">
+          <view class="list-img">
+            <image src="/image/product/product1.png" />
+          </view>
+          <view class="product-title">简约纯银925钻石锁骨链</view>
+          <view class="product-price">￥777.6</view>
+        </view>
+      </view>
+    </view>
+</template>

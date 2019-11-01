@@ -1,0 +1,78 @@
+/* pages/my/opinion/opinion.wxss */
+.content {
+  padding-top: 1rpx;
+}
+
+.set-text {
+  padding: 20rpx 26rpx;
+  font-size: 28rpx;
+  color: #929090;
+}
+
+.opinion-text {
+  font-size: 26rpx;
+}
+
+textarea{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 26rpx;
+  margin-top: 2rpx;
+  font-size: 26rpx;
+}
+
+.add-photo {
+  display: flex;
+  /* flex-direction: row;占满容器 */
+  flex-wrap: wrap; 
+  white-space:nowrap;
+  /* justify-content: space-between; */
+  overflow: hidden;
+  width: 714rpx;
+  margin: 18rpx 0 50rpx 18rpx;
+  /* background: #fff; */
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #D5D5D5;
+}
+
+.add-photo-item {
+  padding: 20rpx 0 20rpx 55rpx;
+}
+
+.add-photo-item .add-img{
+  width: 164rpx;
+  height: 164rpx;
+}
+
+.tap-box {
+  width: 164rpx;
+  height: 164rpx;
+  margin: 20rpx 0 20rpx 55rpx;
+  border: 1rpx dashed #D5D5D5;
+}
+
+.tap-box .tap-img {
+  width: 64rpx;
+  height: 56rpx;
+  padding: 36rpx 0 16rpx 52rpx;
+}
+
+.add-text {
+  font-size:28rpx;
+  color:#A9A8AD;
+  padding-left: 28rpx;
+}
+
+button {
+  width: 510rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  color: #fff;
+  background: #8E7C77;
+  font-size: 32rpx;
+}
+
+.confrim-opinion::after{
+  border: none;
+  border-radius: 0;
+}

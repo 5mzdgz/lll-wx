@@ -1,0 +1,92 @@
+/* pages/my/wallet/wallet.wxss */
+
+/* page{ 
+  background: #f9f9f9;
+} */
+
+.wallet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-img {
+  width: 163rpx;
+  height: 183rpx;
+  margin-top: 200rpx;
+}
+
+.wallet-title {
+  font-size: 22rpx;
+  margin-top: 18rpx;
+}
+
+.money-box {
+  margin-top: 36rpx;
+}
+
+.money-box .symbol {
+  font-size: 36rpx;
+}
+
+.money-box .money {
+  font-size: 64rpx;
+}
+
+button {
+  width: 42.41%;
+  color: #fff;
+  background: #EC4E4E;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+
+.recharge {
+  margin-top: 190rpx; 
+  margin-bottom: 32rpx;
+}
+
+.cash {
+  color: #EC4E4E;
+  background:#D4D5D6;
+}
+
+.check-bills {
+  font-size: 22rpx;
+  color: #707070;
+  margin-top: 120rpx;
+  height: 38rpx;
+}
+
+.check-bills .icon-xiangyou {
+  font-size: 22rpx;
+} 
+
+.not-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20%;
+}
+
+.content {
+  margin-top: 70rpx;
+  color: #8d8d8d;
+}
+
+.not-open image {
+  width: 74.4%;
+  height: 318rpx;
+}
+
+.set-password {
+  width: 68%;
+  position: fixed;
+  bottom: 40rpx;
+  right: 16%;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background: #EC4E4E;
+}

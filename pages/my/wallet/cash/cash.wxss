@@ -1,0 +1,307 @@
+/* pages/my/cash/cash.wxss */
+page{ 
+  background: #f9f9f9;
+}
+
+.cash-container .cash-box {
+  height: 162rpx;
+  line-height: 162rpx;
+  padding: 0 44rpx;
+  font-size: 28rpx;
+}
+
+.cash-box .cash-left {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+ .conter {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 36rpx;
+ }
+
+ .cash-box .cash-left .title {
+
+ }
+
+ .conter .wx-img {
+  margin-right: 18rpx;
+   width: 44rpx;
+   height: 44rpx;
+ }
+
+.cash-right {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mark {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 162rpx;
+}
+
+.account-nav {
+  max-width: 180rpx;
+}
+
+.account, .account-nav {
+  margin: 0 15rpx;
+  color: #c2c2c2;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: keep-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.account_active {
+  color: #1e1e1e;
+}
+
+.arrow-right {
+  width: 20rpx;
+  height: 34rpx;
+}
+
+.recharge-box {
+  position: fixed;
+  bottom: 0;
+  height: 76%;
+  padding: 48rpx 60rpx 0 60rpx;
+  background: #fff;
+  box-shadow:0px 6rpx 12rpx rgba(0,0,0,0.07);
+  border-radius: 30rpx;
+  width: 630rpx;
+  z-index: 10;
+}
+
+.moneyInput {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.recharge-box .title {
+  font-size: 28rpx;
+}
+
+.sub {
+  color: #919191;
+  font-size: 18rpx;
+} 
+
+.tips-sub {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+  color: #919191;
+  font-size: 18rpx;
+}
+
+.recharge-box .tips {
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+  color: #919191;
+  font-size: 18rpx;
+}
+
+.tips_selected {
+  color: #EC4E4E;
+}
+
+.recharge-box .tips .whole-cash {
+  padding-left: 16rpx;
+  font-size: 20rpx;
+  color: #606376;
+}
+
+.recharge-box .recharge-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #D6D6D6;
+  margin-top: 50rpx;
+}
+
+.recharge-box .recharge-number .symbol {
+  font-size: 78rpx;
+}
+
+.recharge-box button {
+  font-size: 32rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #EC4E4E;
+  color: #fff;
+  border-radius: 12rpx;
+}
+.cash-header {
+  text-align: center;
+  font-size: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.cash-header .text-right {
+  float: right;
+  margin-right: 40rpx;
+}
+
+.body-info .body-item {
+  font-size: 26rpx;
+  margin: 0 30rpx;
+  height: 102rpx;
+  line-height: 102rpx;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.body-item .conter {
+  margin-left: 0;
+}
+
+.body-item .conter .sub {
+  padding-right: 10rpx;
+}
+
+.footer {
+  font-size: 24rpx;
+  color: #707070;
+  height: 124rpx;
+  line-height: 124rpx;
+  text-align: center;
+}
+
+.footer .icon-xiangyou {
+  font-size: 22rpx;
+}
+
+.hidan-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 20;
+  opacity: 0.3;
+}
+
+.show-box {
+  position: fixed;
+  left: 13.33%;
+  top: 21%;
+  width: 73.33%;
+  height: 498rpx;
+  background: #fff;
+  z-index: 30;
+  border-radius: 12rpx;
+}
+
+.show-box .header {
+  border-bottom: 1px solid #D6D6D6;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.header .colse {
+  color: #c2c2c2;
+  padding-left: 20rpx;
+}
+
+.header .title {
+  margin-left: 23%;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.body-box {
+  position: relative;
+  text-align: center;
+}
+
+.body-box .body-name {
+  font-size: 28rpx;
+  padding: 30rpx 0;
+}
+
+.body-box .money-box {
+  font-weight: 900;
+}
+
+.money-box .symbol {
+  font-size: 30rpx;
+}
+
+.tabel {
+  border: 1px solid #D6D6D6;
+  /* border-right:none; */
+  margin: 30rpx 30rpx 0 30rpx;
+  display: flex;
+  border-radius: 14rpx;
+  background: #F8F8F8;
+}
+
+.tabel .td {
+  width: 20%;
+  height: 70rpx;
+  /* border-right: 1px solid #D6D6D6; */
+}
+
+.tabel .td .text {
+  /* margin: 25rpx 0  0 25rpx;33 */
+  margin-top: 25rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background: #000;
+}
+
+.msg {
+  font-size: 20rpx;
+  color: #FA4D13;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  margin-left: 30rpx;
+}
+
+.pass-confrim {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+  font-size: 32rpx;
+  background: #EC4E4E;
+  border-radius: 0;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  
+}
+
+.passInput {
+  position: relative;
+  bottom: 0;
+  margin: 30rpx 30rpx 0 30rpx;
+  /* left: -300rpx; */
+  border-radius: 14rpx;
+  background: #F8F8F8;
+  font-size: 30rpx;
+  text-align: left;
+  border: 1px solid #D9D9D9;
+  padding: 0 30rpx;
+  height: 70rpx;
+}
+
+.place {
+  font-size: 26rpx;
+}

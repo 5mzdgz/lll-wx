@@ -1,0 +1,97 @@
+<!--pages/order/order.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="订单"
+>
+</navigation>
+<view class="content">
+
+  <view class="container order-container" hidden="{{!loadingHidden}}">
+    <view class="order-top-box">
+      <text wx:for="{{navbar}}" data-index="{{index}}" class="{{currentTab==index ? 'selected' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+    <view>
+      <view class="order-list-box" wx:for="{{orderArr}}" wx:for-item="arrData" wx:key="unique">
+        <view class="list-box" data-id="{{arrData.id}}" bindtap="seeOrderTap">
+          <view class="list-top-box">
+            <text class="order-number">订单编号：{{arrData.orderNumber}}</text>
+            <text class="order-status-red" wx:if="{{arrData.status==0}}">待付款</text>
+            <text class="order-status-red" wx:if="{{arrData.status==1}}">待发货</text>
+            <text class="order-status-red" wx:if="{{arrData.status==2}}">待收货</text>
+            <text class="order-status" wx:if="{{arrData.status==3}}">已完成</text>
+            <text class="order-status-cancel" wx:if="{{arrData.status==10}}">已取消</text>
+            <text class="order-status-cancel" wx:if="{{arrData.status==11}}">已取消</text>
+          </view>
+          <view class="list-bottom-box" wx:for="{{arrData.productList}}" wx:for-item="products"  wx:key="unique">
+            <view class="order-img">
+              <image src="{{products.imgUrl}}" />
+            </view>
+            <view class="order-info">
+              <view class="product-left-info">
+                <view class="left-title">{{products.title}}</view>
+                <block wx:for="{{products.attributesMap}}" wx:for-index="key" wx:key="unique">
+                  <view class="left-param">{{key}}：{{item}}</view>
+                </block>
+              </view>
+              <view class="product-right-price">
+                <view class="right-price">￥{{products.price}}</view>
+                <view class="right-count">x{{products.commodityNum}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="product-bottom-total">
+            <view class="bottom-total">
+              <text class="bottom-count">共{{arrData.number}}件商品 合计：</text>
+              <text class="totals">￥{{arrData.total}}</text>
+              <!-- <text class="freight">(含运费￥6.00)</text> -->
+            </view>
+          </view>
+          <view class="btns">
+            <view wx:if="{{arrData.status==0}}">
+              <text class="status-itmes go-pay" data-item="{{arrData}}" catchtap="goPayTap">去付款</text>
+              <text class="status-itmes del-order" data-id="{{arrData.id}}" catchtap="cancelTap">取消订单</text>
+            </view>
+            <text class="status-itmes confrim-order" data-id="{{arrData.id}}" wx:if="{{arrData.status==2}}" catchtap="confrimTap">确认收货</text>
+            <view wx:if="{{arrData.status==3}}">
+              <button class="status-itmes after-sale" open-type="contact" catchtap="saleTap">申请售后</button>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="hidan-box" wx:if="{{isShow}}"></view>
+      <view class="show-box" wx:if="{{isShow}}">
+        <view class="header">
+          <text class="colse" catchtap="closeTap">×</text>
+          <text class="title">请输入支付密码</text>
+        </view>
+        <form bindsubmit="formSubmit">
+        <view class="body-box">
+          <view class="body-name">支付</view>
+          <view class="money-box">
+            <text class="symbol">￥</text>
+            <text class="money">{{total}}</text>
+          </view>
+          <view class="phone">+86 {{sPhone}}</view>
+          <view class="short-message">
+            <input class="codeInput" type="number" name="code" value="{{code}}" maxlength='4' placeholder='请输入短信验证码'/>
+            <text class="right send" disabled='{{shortDisabled}}' bindtap='getVerificationCode'>{{codename}}</text>
+          </view>
+          <input class="passInput" type="text" name="payPassword" password="true" focus='{{payFocus}}' maxlength="16" placeholder-class='place' placeholder='请输入交易密码' />
+        </view>
+        <button class="pass-confrim" form-type="submit">确定</button>
+        </form>
+      </view>
+
+      <view class="order-empty" wx:if="{{orderArr.length==0}}">
+        <image class="order-empty-img" src="https://img.laoliangli.com/label/common/empty_order.png"/>
+        <text class="order-empty-text">还没有信息，快去购物吧~</text>
+      </view>
+    </view>
+  </view>
+
+  <loading hidden="{{loadingHidden}}">
+      加载中...
+  </loading>
+</view>

@@ -1,0 +1,91 @@
+<!--pages/home/home.wxml-->
+<import src="/pages/common/recommend/recommend-pro.wxml"/>
+
+<!-- WXML 自定义顶部状态栏div结构 -->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="老良利珠宝商城"
+>
+</navigation>
+<view class="content">
+  <view class="container home-container" hidden="{{!loadingHidden}}">
+  
+    <view class="swiper-container">
+      <swiper class="swiper"
+      autoplay="{{bannerAutoplay}}" 
+      interval="{{interval}}"
+      duration="{{duration}}"
+      circular="{{circular}}"
+      bindchange="swiperChange"
+      previous-margin="60rpx"
+      next-margin="60rpx"
+      bindchange='swiperBannerChange'
+      >
+        <block wx:for="{{slider}}" wx:key="{{index}}">
+          <swiper-item class="banner-item" bindtap="goLinksTap" data-item="{{item}}">
+            <image class="item-image {{index == current?'active_img':''}}" src="{{item.imgUrl}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <view class="dot{{index == current ? ' active ' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+
+    <view class="new-products">
+      <view>
+        <view class="new-title-box">
+          <view class="line"></view>
+          <view class="new-title">新品上线</view>
+          <view class="line"></view>
+        </view>
+        <view class="new-bottom">New products</view>
+      </view>
+      <view class="new-swiper">
+        <swiper class="swiper-box"
+        autoplay="{{newAutoplay}}"
+        duration="{{duration}}"
+        circular="{{newCircular}}"
+        bindchange="swiperChange"
+        previous-margin="126rpx"
+        next-margin="126rpx"
+        bindchange='swiperNewChange'
+        >
+          <block wx:for="{{sliderNew}}" wx:key="{{index}}">
+            <swiper-item class="banner-item" bindtap="onRecommendItems" data-id="{{item.id}}">
+              <image class="new-image {{newCurrent == index?'new_active_img':''}}" mode='aspectFit' src="{{item.defaultImgUrl}}" />
+              <view class="new-info">
+                <view class="title">{{item.title}}</view>
+                <view class="price">￥{{item.nowPrice}}</view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+    <view class="home-recommend">
+      <view class="recommend-header">
+        <view class="recommend-icon"></view>
+        <view class="recommend-title">热销推荐</view>
+      </view>
+      <view class="recommend-products">
+        <template is="recommend" data="{{recommendData:recommendData}}" />
+      </view> 
+    </view>
+
+    <view class="invitation-pop" wx:if="{{isPop}}"></view>
+    <view class="invitation-box" wx:if="{{isPop}}">
+      <view class="pop-box">
+        <image src="https://img.laoliangli.com/label/invitation/invitation_tips.png" catchtap="registerTap"></image>
+        <icon type='cancel' size='40' color='#fff' catchtap="closeInvitationTap"></icon>
+      </view>
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

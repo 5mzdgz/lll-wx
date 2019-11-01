@@ -1,0 +1,60 @@
+<!--pages/order/aftermarket/aftermarket.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="售后"
+>
+</navigation>
+<view class="content">
+  <view class="container aftermarket">
+    <view class="after-nav">
+      <text wx:for="{{navbar}}" data-index="{{index}}" class="{{currentTab==index ? 'selected' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+
+    <view class="aftermarket-item" wx:for="{{afterArr}}" wx:for-item="marketArr" wx:key="unique">
+      <view data-id="{{marketArr.id}}" bindtap="seeOrderTap">
+        <view class="aftermarket-top">
+          <text class="aftermarket-number">订单编号：{{marketArr.orderNumber}}</text>
+          <text class="aftermarket-status" wx:if="{{marketArr.status==4}}">待处理</text>
+          <text class="aftermarket-status" wx:if="{{marketArr.status==5}}">已处理</text>
+        </view>
+        <view class="aftermarket-middle" wx:for="{{marketArr.productList}}" wx:for-item="pList" wx:key="unique">
+          <image class="middle-img" src="{{pList.imgUrl}}"/>
+          <view class="middle-product">
+            <view class="middle-top">
+              <view class="middle-left">
+                <view class="middle-product-title">{{pList.title}}</view>
+                <block wx:for="{{pList.attributesMap}}" wx:for-index="key" wx:key="unique">
+                  <view class="middle-product-size">{{key}}: {{item}}</view>
+                </block>
+              </view>
+              <view class="middle-right">
+                <view class="product-price">
+                  <view class="price-top">
+                    <text class="symbol">￥</text>
+                    <text class="price">{{pList.price}}</text>
+                  </view>
+                  <text class="product-count">x{{pList.commodityNum}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="middle-bottom">
+          <text class="payment-label">实付：</text>
+          <text class="symbol">￥</text>
+          <text class="payment-price">{{marketArr.total}} </text>
+          <text class="payment-label">退款金额：</text>
+          <text class="red-symbol">￥</text>
+          <text class="red-payment-price">{{marketArr.total}}</text>
+        </view>
+        <!-- <view class="aftermarket-bottom" data-id="{{marketArr.id}}" bindtap="seeOrderTap">查看详情</view> -->
+      </view>
+    </view>
+
+    <view class="order-empty" wx:if="{{empty}}">
+      <image class="order-empty-img" src="https://img.laoliangli.com/label/common/empty_cart.png"/>
+      <text class="order-empty-text">还没有信息，售后联系客服~</text>
+    </view>
+  </view>
+</view>

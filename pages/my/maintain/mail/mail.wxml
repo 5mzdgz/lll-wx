@@ -1,0 +1,64 @@
+<!--pages/my/maintain/mail/mail.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="提交邮寄信息"
+>
+</navigation>
+<view class="content">
+  <view class="container mail-container">
+    <view class="shipping-reminder">
+      <view class="photograph-top">
+        <view class="title-icon"></view>
+        <text>发货提醒</text>
+      </view>
+      <view class="matter-box">
+        <view class="matter-item">1.请按照下方平台地址进行邮寄并填写上快递公司和快递单号。</view>
+        <view class="matter-item">2.请装到小透明带中，小纸条写上对应的维修编码，便于双方确认产品。</view>
+        <view class="matter-item">3.请确保邮寄实物与审核资料一致，否则我方将拒绝签收。</view>
+      </view>
+    </view>
+
+    <view class="platform-address">
+      <view class="platform-nav">
+        <text class="platform-title">平台收件地址</text>
+        <text class="platform-subTitle">（按此地址邮寄）</text>
+      </view>
+      <view class="platform-info">
+        <text class="iconfont icon-dizhi"></text>
+        <view class="platform-content">
+          <view class="corporate-name">老良利电子商务有限公司 0755-28914801</view>
+          <view class="corporate-address">深圳市龙岗区横岗街道六和路宝润发工业村1栋3楼</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="mail-address" wx:if="{{addressId}}" bindtap="addAddressTap">
+      <text class="iconfont icon-dizhi"></text>
+      <view class="address-middle">
+        <view class="middle-top">
+          <text class="address-user">{{userName}}</text>
+          <text class="address-phone">{{userPhone}}</text>
+        </view>
+        <view class="address-text">{{province}}{{city}}{{area}}{{address}}</view>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+
+    <view class="mail-add" bindtap="addAddressTap" wx:else>
+      <view class="add-left">
+        <text class="iconfont icon-jia"></text>
+        <text class="add-title">添加收货地址<text class="add-sub">（首饰保养完成后，将寄回此地址）</text></text>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+    <form bindsubmit="bindCourierTap">
+      <view class="courier-number">
+        <text class="courier">快递单号</text>
+        <input type="number" name="shippingCode" maxlength="16" placeholder="请填写快递单号" />
+      </view>
+
+      <button class="mail-confrim" disabled='{{disabled}}' form-type="submit">确认提交</button>
+    </form>
+  </view>
+</view>

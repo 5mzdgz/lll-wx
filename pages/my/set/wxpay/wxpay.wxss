@@ -1,0 +1,157 @@
+/* pages/my/bank/bank.wxss */
+
+page{ 
+  background: #f9f9f9;
+}
+
+.bank-container {
+
+}
+
+.bank-item {
+  padding: 0 36rpx;
+  overflow: hidden;
+  clear: both;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+
+.item-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30rpx;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.item-bottom {
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-bottom .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-top, .item-bottom text {
+  float: left;
+  height: 55rpx;
+  line-height: 55rpx;
+}
+
+.item-top input {
+  float: right;
+}
+
+input {
+  width: 400rpx;
+  text-align: right;
+}
+
+.send {
+  color: #80B4F0;
+}
+
+.item-bottom input {
+  float: right;
+  text-align: right;
+}
+
+.arrow-right {
+  margin-left: 15rpx;
+  width: 18rpx;
+  height: 28rpx;
+}
+
+button {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  background: #EC4E4E;
+  color: #fff;
+  border-radius: 12rpx;
+}
+
+button[disabled] {
+  color:#fff !important;
+  background: rgb(218, 145, 145) !important;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.header .text-right {
+  position: absolute;
+  right: 36rpx;
+}
+
+.body-info {
+  text-align: center;
+  background: #f9f9f9;
+  font-size: 24rpx;
+}
+
+.body-info .body-item {
+  position: relative;
+  margin: 0 36rpx;
+  padding: 22rpx 0 14rpx 0;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.body-info icon {
+  position: absolute;
+  right: 50rpx;
+}
+
+
+.set-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.set-img {
+  margin-top: 180rpx;
+}
+
+.set-img image {
+  width: 424rpx;
+  height: 262rpx;
+}
+
+.success-title {
+  font-size: 36rpx;
+  margin: 50rpx 0 22rpx 0;
+}
+
+.success-sub {
+  font-size: 24rpx;
+}
+
+button {
+  width: 68%;
+  position: fixed;
+  bottom: 40rpx;
+  right: 16%;
+  height: 74rpx;
+  line-height: 74rpx;
+}

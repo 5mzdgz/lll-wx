@@ -1,0 +1,9 @@
+<!--pages/text/text.wxml-->
+<navigation id='Navigation' show-icon='{{showIcon}}' title="测试">
+</navigation>
+<view class="content">
+
+  <view class="section" bindtouchstart='touchShow' bindtouchmove='touchMove' bindtouchend='touchEnd'>
+    <view class="section-show" style="display: {{isShow?'block':'none'}}">hello world</view>
+  </view>
+</view>

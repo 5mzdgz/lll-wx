@@ -1,0 +1,86 @@
+<!--pages/my/cash/cash.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="提现"
+>
+</navigation>
+<view class="content">
+  <view class="container cash-container">
+    <view class="cash-box">
+      <view class="cash-left" bindtap="cashModeTap">
+        <text class="title">选择提现方式</text>
+        <view class="conter">
+          <image class="wx-img" src="{{cashData.modeImg}}"></image>
+          <text class="sub">{{cashData.payeeName}}</text>
+        </view>
+      </view>
+      <view class="cash-right" data-account="{{cashData.account}}" catchtap="defCashTap">
+        <image class="mark" wx:if="{{!cashData.account}}" src="https://img.laoliangli.com/label/wallet/mark_icon.png"></image>
+        <text class="account-nav {{!cashData.account?'account_active':''}}">{{cashData.account?cashData.account:'未绑定'}}</text>
+        <text wx:if="{{!cashData.account}}" class="iconfont icon-xiangyou"></text>
+      </view>
+    </view>
+    <view class="recharge-box">
+      <form bindsubmit="bindFormSubmit">
+        <view class="title">提现金额
+          <text class="sub">最低提现金额{{minAmount}}元起</text>
+        </view>
+        <view class="recharge-number">
+          <text class='symbol'>￥</text>
+          <input type='digit' class="moneyInput" name="money" value='{{money}}' focus='{{focus}}' maxlength='12' bindinput="bindinputTap" />
+        </view>
+        <view class="tips" wx:if="{{!tips}}" catchtap="wholeCashTap">
+          <text class="sub">可提现金额￥{{amount}}</text>
+          <text class="whole-cash">全部提现</text>
+        </view>
+        <view class="tips-sub tips_selected" wx:if="{{tips}}">{{tips}}</view>
+        <button form-type='submit' disabled="{{disabled}}">下一步</button>
+      </form>
+    </view>
+    <view class="hidan-box" wx:if="{{isShow}}"></view>
+    <view class="show-box" wx:if="{{isShow}}">
+      <view class="header">
+        <text class="colse" catchtap="hiddanTap">×</text>
+        <text class="title">请输入支付密码</text>
+      </view>
+      <view class="body-box">
+        <view class="body-name">充值</view>
+        <view class="money-box">
+          <text class="symbol">￥</text>
+          <text class="money">{{account}}</text>
+        </view>
+
+        <input class="passInput" type="text" password="true" focus='{{payFocus}}' maxlength="16" placeholder-class='place' placeholder='请输入交易密码' bindinput="passwordTap" />
+        <view class="msg">{{msg}}</view>
+      </view>
+      <button class="pass-confrim" bindtap="getCashConfrim">确定</button>
+    </view>
+    <view class='mask-layer' wx:if="{{showPop}}" bindtap='hideModal'></view>
+    <view class='pop-add-cart pop-common' wx:if="{{showPop}}" animation='{{animationData}}'>
+      <view class='cash-header'>
+        <text>请选择提现方式</text>
+        <text class="text-right" catchtap="cancelTap">取消</text>
+      </view>
+      <view class="body-info">
+        <view class="body-item" wx:for="{{cashMode}}" wx:for-item="modeItem" wx:key="unique" data-item="{{modeItem}}" bindtap="checkModeItem">
+          <view class="conter">
+            <image class="wx-img" src="{{modeItem.modeImg}}"></image>
+            <text class="sub">{{modeItem.modeName}}</text> 
+            <text class="sub">{{modeItem.payeeName}}</text>
+          </view>
+          <view class="cash-right">
+            <image class="mark" wx:if="{{!modeItem.account}}" src="https://img.laoliangli.com/label/wallet/mark_icon.png"></image>
+            <text class="account {{!modeItem.account?'account_active':''}}">{{modeItem.account?modeItem.account:'未绑定'}}</text>
+            <text wx:if="{{!modeItem.account}}" class="iconfont icon-xiangyou"></text>
+          </view>
+        </view>
+      </view>
+      <view class="footer" bindtap="changeCashTap">
+        <text>更改提现资料 </text>
+        <text class="iconfont icon-xiangyou"></text>
+      </view>
+    </view>
+  </view>
+</view>

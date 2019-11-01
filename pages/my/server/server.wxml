@@ -1,0 +1,48 @@
+<!--pages/my/server/server.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="联系客服"
+>
+</navigation>
+<view class="content">
+  <view class="container server-container">
+    <view class="server-banner">
+      <image src="https://img.laoliangli.com/label/common/service_banner.png"></image>
+    </view>
+
+    <button class="item-btn" bindtap="makePhoneTap" style="height: 184rpx">
+      <view class="btn-img">
+        <image src="https://img.laoliangli.com/label/common/service_icon.png"></image>
+      </view>
+      <view class="btn-middle">
+        <view class="btn-title">全国服务热线</view>
+        <view class="btn-sub">0755-28914801 服务时间：9:30-18:30</view>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </button>
+
+    <button class="item-btn" open-type="contact" style="height: 184rpx">
+      <view class="btn-img">
+        <image src="https://img.laoliangli.com/label/common/service_wx_icon.png"></image>
+      </view>
+      <view class="btn-middle">
+        <view class="btn-title">在线客服</view>
+        <view class="btn-sub">在线客服竭诚解决您的问题</view>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </button>
+
+    <!-- <button class="item-btn" open-type="contact">
+      <view class="btn-img">
+        <image src="https://img.laoliangli.com/label/common/location_icon.png"></image>
+      </view>
+      <view class="btn-middle">
+        <view class="btn-title">售后服务网点</view>
+        <view class="btn-sub">看看离您最近的服务网点在哪里</view>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </button> -->
+  </view>
+</view>

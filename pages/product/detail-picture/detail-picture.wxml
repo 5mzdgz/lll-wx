@@ -1,0 +1,5 @@
+<template name="detailPicture">
+    <view class="detail-picture-box" wx:for="{{detailArr}}" wx:key="unique">
+      <image class="product-detail" mode="widthFix" src="{{item.imgUrl}}" />
+    </view>
+</template>

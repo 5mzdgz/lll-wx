@@ -1,0 +1,50 @@
+<!-- <template name="about"> -->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{tabbarTitle}}"
+>
+</navigation>
+<view class="content">
+  <view class="about-container">
+    <image class="about-banner" src="https://img.laoliangli.com/label/my/about_banner.png" />
+    <view class="cooperation">
+      <view class="coo-title">
+        <text>公司介绍</text>
+      </view>
+      <view class="coo-info-one">老良利坚持纯手工艺文化+时尚设计的传承，自成立以来，我们就致力于打造全民时尚品牌，采用“线上多渠道”+“线下连锁”的运营模式。</view>
+      <view class="coo-info-two">设计灵感来源于情感、自然、浪漫与个性，独具匠心的运用各种时尚元素和材质，每个系列都充满了独特的设计感和情感内涵。我们怀着至诚、至善的态度，制作至信、至精的产品，将时尚珠宝的幸福体验带给每一位客户。</view>
+    </view>
+    <view class="culture">
+      <view class="culture-title">企业文化</view>
+      <image class="culture-img" src="https://img.laoliangli.com/label/my/about_culture.png" />
+      <view class="culture-item">
+        <text class="culture-left">服务</text>
+        <image class="culture-middle-img" src="https://img.laoliangli.com/label/my/black_right.png" />
+        <text class="culture-right">顾客至上 服务至上</text>
+      </view>
+       <view class="culture-item">
+        <text class="culture-left">诚信</text>
+        <image class="culture-middle-img" src="https://img.laoliangli.com/label/my/black_right.png" />
+        <text class="culture-right">企业如人 诚信为本</text>
+      </view>
+       <view class="culture-item">
+        <text class="culture-left">敬业</text>
+        <image class="culture-middle-img" src="https://img.laoliangli.com/label/my/black_right.png" />
+        <text class="culture-right">专业执着 精益求精</text>
+      </view>
+       <view class="culture-item">
+        <text class="culture-left">激情</text>
+        <image class="culture-middle-img" src="https://img.laoliangli.com/label/my/black_right.png" />
+        <text class="culture-right">乐观向上 勇敢拼搏</text>
+      </view>
+       <view class="culture-item">
+        <text class="culture-left">共赢</text>
+        <image class="culture-middle-img" src="https://img.laoliangli.com/label/my/black_right.png" />
+        <text class="culture-right">开放合作 互利共赢</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- </template> -->

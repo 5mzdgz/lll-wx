@@ -1,0 +1,95 @@
+/* pages/my/address/new-address/new-address.wxss */
+
+page{ 
+  background: #f9f9f9;
+}
+
+.content {
+  padding-top: 1rpx;
+}
+
+.new-address {
+  margin-top: 32rpx;
+  background: #fff;
+  border-top: 1rpx solid #D6D6D6;
+}
+
+.new-address-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 0 36rpx;
+  border-bottom: 1rpx solid #D6D6D6;
+  height: 80rpx;
+}
+
+.new-address-item .item-text {
+  width: 120rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  color:rgba(0,0,0,1);
+  padding-top: 26rpx
+}
+
+.new-address-item .set_address{
+  width: 220rpx;
+}
+
+.new-address-item .picker {
+  padding-top: 25rpx;
+  font-size: 28rpx;
+  margin-left: 36rpx;
+}
+
+.picker_true {
+  color: #777;
+}
+
+.new-address-item input {
+  height:40rpx;
+  font-size:28rpx;
+  line-height:40rpx;
+  padding-top: 24rpx;
+  margin-left: 36rpx;
+}
+
+.new-address-item image {
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+  width: 29rpx;
+  height: 39rpx;
+}
+
+.detail-address {
+  padding-bottom: 80rpx;
+}
+
+.new-address-item switch {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  zoom: .7;
+}
+
+.add-confrim {
+  width:510rpx;
+  height:74rpx;
+  line-height: 74rpx;
+  color: #fff;
+  background:#8E7C77;
+  border-radius:12rpx;
+  margin-top: 32rpx;
+}
+
+textarea {
+ width: 510rpx;
+ height: 180rpx;
+ line-height: 40rpx;
+ font-size: 28rpx;
+ margin: 30rpx 0 0 40rpx;
+}
+
+.textarea {
+  font-size: 28rpx;
+}

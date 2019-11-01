@@ -1,0 +1,10 @@
+<!--pages/order/show/show.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <image mode='widthFix' lazy-load='true' style='width:100%; heigth:100%;' src='{{imgShow}}'></image>
+</view>

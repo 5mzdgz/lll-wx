@@ -1,0 +1,33 @@
+/* pages/my/set/set.wxss */
+page{ 
+  background: #f9f9f9;
+}
+
+.set-container {
+
+}
+
+.item-box {
+  font-size: 28rpx;
+  height: 100rpx;
+  background: #fff;
+  padding: 0 28rpx;
+  margin-top: 26rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow:2px 4px 8px rgba(0,0,0,0.05);
+}
+
+.item-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+.item-left image {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 24rpx;
+}

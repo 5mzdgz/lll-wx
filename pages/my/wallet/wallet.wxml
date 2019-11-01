@@ -1,0 +1,30 @@
+<!--pages/my/wallet/wallet.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="钱包"
+>
+</navigation>
+<view class="content">
+  <view class="container wallet-container" wx:if="{{isOpen}}">
+    <image class="wallet-img" src="https://img.laoliangli.com/label/wallet/wallet.png"></image>
+    <view class="wallet-title">我的余额</view>
+    <view class="money-box">
+      <text class="symbol">￥</text>
+      <text class="money">{{amount}}</text>
+    </view>
+    <button class="recharge" bindtap="rechargeTap">充值</button>
+    <button class="cash" bindtap="cashTap">提现</button>
+    <view class="check-bills" bindtap="billsTap">
+      <text>查看账单流水</text>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+  <view class="not-open" wx:else>
+    <image src="https://img.laoliangli.com/label/wallet/not_open.png"></image>
+    <view class="content">快设置支付密码，开通钱包吧~</view>
+    <navigator url='../set/reset-password/reset-password?flag=3'>
+      <button class="set-password">设置密码</button>
+    </navigator>
+  </view>
+</view>

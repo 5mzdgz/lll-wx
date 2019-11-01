@@ -1,0 +1,40 @@
+<!--pages/my/maintain/maintain-opinion/maintain-opinion.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="意见反馈"
+>
+</navigation>
+<view class="content">
+  <view class="container mat-opinion-container">
+    <view class="score-box">
+      <view class="score-left">服务评分</view>
+      <view class="score-middle">
+        <text class="iconfont {{currentIndex>=index?'icon-pingfen_xuanzhong':'icon-pingfen'}}" wx:for="{{scoreArr}}" data-index="{{index}}" wx:key="unique" catchtap="scoreTap"></text>
+      </view>
+      <view class="score-right">{{scoreStatus}}</view>
+    </view>
+    
+    <form bindsubmit="bindFormSubmit">
+      <textarea placeholder-class="opinion-text" value='{{concent}}' placeholder="{{textarea}}" name="textarea"/>
+
+      <view class="add-photo">
+        <view class="add-photo-item" wx:for="{{imageList}}" wx:for-item="image" wx:key="{{index}}">
+          <image class="add-img" mode="aspectFill" src="{{image}}"/>
+          <icon type="clear" size="18" color="#E4E4E4" data-index="{{index}}" catchtap="deletImgTap"></icon>
+        </view>
+        <view class="tap-box" bindtap="addImgTap">
+          <image class="tap-img" src="https://img.laoliangli.com/label/common/addimg_icon.png" />
+          <view class="add-text">添加照片</view>
+        </view>
+      </view>
+      <button class="confrim-opinion" form-type="submit">提交</button>
+    </form>
+
+    <view class='mask-layer' wx:if="{{isOpinion}}" bindtap='hideModal'></view>
+    <view class="opinion-success" wx:if="{{isOpinion}}">
+      <image src="https://img.laoliangli.com/label/maintain/opinion_success.png" catchtap="goCouponTap"></image>
+      <icon type='cancel' size='40' color='#fff' catchtap="closeInvitationTap"></icon>
+    </view>
+  </view>
+</view>

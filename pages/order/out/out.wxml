@@ -1,0 +1,10 @@
+<!--pages/order/out/out.wxml-->
+<!-- <navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="订单详情"
+>
+</navigation>
+<view class="content"> -->
+  <web-view src="{{shippingUrl}}"></web-view>
+<!-- </view> -->

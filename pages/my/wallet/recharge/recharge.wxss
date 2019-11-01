@@ -1,0 +1,189 @@
+/* pages/my/recharge/recharge.wxss */
+page{ 
+  background: #f9f9f9;
+}
+
+.recharge-container .cash-box {
+  height: 162rpx;
+  line-height: 162rpx;
+  padding: 0 44rpx;
+  font-size: 28rpx;
+}
+
+.cash-box .cash-left {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+ .conter {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 36rpx;
+ }
+
+ .conter .wx-img {
+  margin-right: 18rpx;
+   width: 38rpx;
+   height: 38rpx;
+ }
+
+.cash-right {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mark {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 162rpx;
+}
+
+.account {
+  margin: 0 15rpx;
+  color: #c2c2c2;
+  width: 180rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: keep-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.moneyInput {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.arrow-right {
+  width: 20rpx;
+  height: 34rpx;
+}
+
+.recharge-box {
+  position: fixed;
+  bottom: 0;
+  height: 76%;
+  padding: 48rpx 60rpx 0 60rpx;
+  background: #fff;
+  box-shadow:0px 6rpx 12rpx rgba(0,0,0,0.07);
+  border-radius: 30rpx;
+  width: 630rpx;
+  z-index: 10;
+}
+
+.recharge-box .title {
+  font-size: 28rpx;
+}
+
+.recharge-box .recharge-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #D6D6D6;
+  margin: 54rpx 0;
+}
+
+.recharge-box .recharge-number .symbol {
+  font-size: 78rpx;
+}
+
+.recharge-box button {
+  font-size: 32rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #EC4E4E;
+  color: #fff;
+  border-radius: 12rpx;
+}
+
+.hidan-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 20;
+  opacity: 0.3;
+}
+
+.show-box {
+  position: fixed;
+  left: 16.27%;
+  top: 21%;
+  width: 67.47%;
+  height: 29.39%;
+  background: #fff;
+  z-index: 30;
+  border-radius: 12rpx;
+}
+
+.show-box .header {
+  border-bottom: 1px solid #D6D6D6;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.header .colse {
+  color: #c2c2c2;
+  padding-left: 20rpx;
+}
+
+.header .title {
+  margin-left: 23%;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.body-box {
+  position: relative;
+  text-align: center;
+}
+
+.body-box .body-name {
+  font-size: 28rpx;
+  padding: 30rpx 0;
+}
+
+.body-box .money-box {
+  font-weight: 900;
+}
+
+.money-box .symbol {
+  font-size: 30rpx;
+}
+
+.tabel {
+  border: 1px solid #D6D6D6;
+  border-right:none;
+  margin: 30rpx 30rpx;
+  display: flex;
+}
+
+.tabel .td {
+  width: 20%;
+  height: 70rpx;
+  border-right: 1px solid #D6D6D6;
+}
+
+.tabel .td .text {
+  margin: 25rpx 0  0 25rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background: #000;
+}
+
+.passInput {
+  position: relative;
+  bottom: 0;
+  left: -300rpx;
+  opacity: 0;
+}

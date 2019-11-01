@@ -1,0 +1,36 @@
+<!--pages/my/maintain/photograph/photograph.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="拍照上传"
+>
+</navigation>
+<view class="content">
+  <view class="container photograph-container">
+    <view class="photograph-top">
+      <view class="title-icon"></view>
+      <text>请拍摄上传首饰的实物相片</text>
+    </view>
+    <view class="matter-box">
+      <view class="matter-item">1.请完整展示首饰需要保养或修复的地方</view>
+      <view class="matter-item">2.至少上传两张图片(一张整体首饰图，一张修复处细节图)</view>
+      <view class="matter-item">3.请确保照片内容完整并清晰可见</view>
+    </view>
+
+    <view class="photograph-box" wx:for="{{photoArr}}" wx:for-item="item" wx:key="unique">
+      <view class="on-photograph" wx:if="{{!item.headImgUrl}}">
+        <view class="item-title">
+          <text class="left" wx:if="{{index!==0}}">{{index}}</text>
+          <text class="right">{{index==0?'此处请上传首饰整体展示图':'此处请上传需修复处细节图'}}</text>
+        </view>
+        <image class="photograph-img" src="{{index!==0?'https://img.laoliangli.com/label/maintain/photo_one.png':'https://img.laoliangli.com/label/maintain/photograph.png'}}"></image>
+        <button class="photograph-button" data-index="{{index}}" catchtap="photographTap">拍照上传</button>
+      </view>
+      <image class="new-img" wx:else src="{{item.headImgUrl}}" data-index="{{index}}" mode='widthFix' catchtap="photographTap"></image>
+    </view>
+
+    <view class="more-photo" bindtap="morePhotoTap">{{more}}</view>
+
+    <button class="confrim" bindtap="confrimTap">完成</button>
+  </view>
+</view>

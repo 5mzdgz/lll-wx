@@ -1,0 +1,25 @@
+<!--pages/my/opinion/opinion.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="意见反馈"
+>
+</navigation>
+<view class="content">
+   <view class="section">
+    <form bindsubmit="bindFormSubmit">
+      <textarea placeholder-class="opinion-text" value='{{concent}}' placeholder="{{textarea}}" name="textarea"/>
+
+      <view class="add-photo">
+        <view class="add-photo-item" wx:for="{{imageList}}" wx:for-item="image" wx:key="unique">
+          <image class="add-img" mode="aspectFill" src="{{image}}"/>
+        </view>
+        <view class="tap-box" bindtap="addImgTap">
+          <image class="tap-img" src="https://img.laoliangli.com/label/common/addimg_icon.png" />
+          <view class="add-text">添加照片</view>
+        </view>
+      </view>
+      <button class="confrim-opinion" form-type="submit">提交反馈</button>
+    </form>
+  </view>
+</view>

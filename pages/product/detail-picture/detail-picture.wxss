@@ -1,0 +1,9 @@
+
+.detail-picture-box {
+  background: #F4F4F4;
+}
+
+.product-detail {
+  width: 100%;
+  margin-bottom: -20rpx;
+}

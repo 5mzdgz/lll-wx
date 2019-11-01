@@ -1,0 +1,181 @@
+
+page {
+  background: #f9f9f9;
+}
+
+.content {
+
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 28rpx;
+}
+
+.order-top-box {
+  overflow: hidden;
+  text-align: center;
+  font-size: 26rpx;
+  color:rgba(30,30,30,1);
+  padding: 14rpx 0;
+}
+
+.selected {
+  border-bottom: 3rpx solid rgba(142,124,119,1);
+  opacity: 1;
+}
+
+.verify-item {
+  width: 714rpx;
+  margin: 20rpx 18rpx;
+  background: #fff;
+  box-shadow:0px 4px 6px rgba(0,0,0,0.06);
+  border-radius: 14rpx;
+  font-size: 18rpx;
+  padding: 24rpx 0;
+  overflow: hidden;
+  clear: both;
+}
+
+.verify-top {
+  padding: 0 28rpx 14rpx 28rpx;
+  border-bottom: 1px solid #DCDCDC;
+}
+
+.verify-status {
+  float: right;
+  font-size: 22rpx;
+  color: #EC4E4E;
+}
+
+.adopt {
+  color: #55AA66;
+}
+
+.verify-bottom {
+  overflow: hidden;
+  clear: both;
+  padding-top: 18rpx;
+}
+
+/* .verify-bottom image {
+  float: left;
+  width: 130rpx;
+  height: 130rpx;
+  margin: 0 22rpx 0 28rpx;
+} */
+
+.verify-bottom .verify-info {
+  margin: 0 28rpx;
+  min-height: 80rpx;
+  overflow: hidden;
+}
+
+.checked-title {
+  font-size: 26rpx;
+  padding-bottom: 10rpx;
+}
+
+.checked-left {
+  font-size: 22rpx;
+}
+
+.checked-item {
+  width: 100%;
+  color: #6B6B6B;
+  height: 35rpx;
+  line-height: 35rpx;
+}
+
+.checked-item .checked-right {
+  float: right;
+}
+
+.service-subName {
+  font-size: 20rpx;
+  margin-left: 20rpx;
+}
+
+.checked-total {
+  float: right;
+  overflow: hidden;
+  padding-right: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.service-count {
+  padding-right: 10rpx;
+}
+
+.no-total {
+  color: #EC4E4E;
+}
+
+.checked-total .symbol {
+  font-size: 14rpx;
+  color: #EC4E4E;
+}
+
+.checked-total .price {
+  font-size: 22rpx;
+  color: #EC4E4E;
+}
+
+.btn-box {
+  
+}
+
+.btn {
+  float: right;
+  width: 152rpx;
+  font-size: 18rpx;
+  color: #EC4E4E;
+  background: #fff;
+  border: 1px solid #EC4E4E;
+  padding: 0rpx 34rpx;
+  line-height: 46rpx;
+  height: 46rpx; 
+  border-radius: 16rpx;
+  margin-top: 20rpx;
+  margin-right: 28rpx;
+}
+
+.delete-btn {
+  color: #1E1E1E;
+  border-color:  #6B6B6B;
+}
+
+.order-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-empty .order-empty-img {
+  width: 486rpx;
+  height: 306rpx;
+  margin-top: 166rpx;
+}
+
+.order-empty-text {
+  height: 50rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 50rpx;
+  color:rgba(141,141,141,1);
+}
+
+.opinion-btn {
+  width: 368rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  background:linear-gradient(90deg,rgba(251,212,172,1) 0%,rgba(246,221,195,1) 100%);
+  margin: 55rpx 0;
+}

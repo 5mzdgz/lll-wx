@@ -1,0 +1,178 @@
+/* pages/my/maintain/mail/mail.wxss */
+
+page {
+  background: #f9f9f9;
+}
+
+.shipping-reminder {
+  background: #fff;
+  padding: 20rpx 0;
+  margin-top: 20rpx;
+  box-shadow:0px 6px 6px rgba(110, 60, 60, 0.02);
+}
+
+.photograph-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.photograph-top .title-icon {
+  width: 8rpx;
+  height: 42rpx;
+  background: #505050;
+}
+
+.photograph-top text {
+  font-size: 30rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  margin-left: 20rpx;
+  color: #000;
+}
+
+.matter-box {
+  margin-left: 28rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  color: #505050;
+}
+
+.platform-address {
+  padding: 14rpx 28rpx 20rpx 28rpx;
+  background: #fff;
+  margin: 32rpx 0;
+  box-shadow:0px 6px 6px rgba(0,0,0,0.02);
+}
+
+.platform-title {
+  font-size: 28rpx;
+}
+
+.platform-subTitle {
+  font-size: 18rpx;
+}
+
+.platform-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.platform-info .icon-dizhi {
+  font-size: 39rpx;
+  margin-right: 14rpx;
+  color: #858585;
+}
+
+.platform-content {
+  font-size: 22rpx;
+  line-height: 50rpx;
+}
+
+.corporate-address {
+  color: #858585;
+}
+
+.mail-address {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+
+.mail-address .address-middle {
+  width: 85%;
+}
+
+.address-user {
+  width: 56rpx;
+  font-size: 30rpx;
+  color:#232323;
+}
+
+.address-phone {
+  width: 156rpx;
+  font-size: 24rpx;
+  color:#737373;
+  padding-left: 30rpx;
+}
+
+.address-text {
+  width: 100%;
+  font-size: 24rpx;
+  color:#343434;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break:break-word;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.mail-add {
+  background: #fff;
+  margin-bottom: 20rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+
+.mail-add .add-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mail-add .icon-jia {
+  font-size: 30rpx;
+  padding: 25rpx;
+  background: #f9f9f9;
+}
+
+.mail-add .add-title {
+  font-size: 30rpx;
+  padding-left: 30rpx;
+}
+
+.mail-add .add-sub {
+  font-size: 18rpx;
+}
+
+.courier-number {
+  font-size: 26rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22rpx 36rpx;
+  box-shadow:0px 6px 6px rgba(0,0,0,0.02);
+}
+
+.courier-number input {
+  text-align: right;
+}
+
+button[disabled] {
+  color: #fff !important;
+  background: #C2C2C2 !important;
+  border-color: #C2C2C2 !important;
+}
+
+.mail-confrim {
+  position: fixed;
+  width: 650rpx;
+  left: 50rpx;
+  bottom: 50rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background: #EC4E4E;
+  border-radius: 0;
+}

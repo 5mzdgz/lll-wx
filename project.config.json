@@ -1,0 +1,392 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.2",
+	"appid": "wx52168d15ce7facf4",
+	"projectname": "wxlaoliangli",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": -1,
+					"name": "car",
+					"pathName": "pages/car/car",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/product/product",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pay",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "category",
+					"pathName": "pages/category/category",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "collection",
+					"pathName": "pages/collection/collection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "phone",
+					"pathName": "pages/phone/phone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/my/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "nick",
+					"pathName": "pages/my/nick/nick",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "autograph",
+					"pathName": "pages/my/autograph/autograph",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "product",
+					"pathName": "pages/product/product",
+					"query": "id=98",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "text",
+					"pathName": "pages/text/text",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "text",
+					"pathName": "pages/text/text",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "address",
+					"pathName": "pages/my/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "new-address",
+					"pathName": "pages/my/address/new-address/new-address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "coupon",
+					"pathName": "pages/my/coupon/coupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "result",
+					"pathName": "pages/pay/pay-result/pay-result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order-detail",
+					"pathName": "pages/order/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "aftermarket",
+					"pathName": "pages/order/aftermarket/aftermarket",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "opinion",
+					"pathName": "pages/my/opinion/opinion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "coupon-product",
+					"pathName": "pages/my/coupon-product/coupon-product",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "自定义编译",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "text",
+					"pathName": "pages/text/text",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "提现",
+					"pathName": "pages/my/wallet/cash/cash",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 28,
+					"name": "提现方式",
+					"pathName": "pages/my/set/cash-mode/cash-mode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "添加银行卡",
+					"pathName": "pages/my/set/bank/bank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "添加支付宝",
+					"pathName": "pages/my/set/alipay/alipay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "钱包",
+					"pathName": "pages/my/wallet/wallet",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "充值",
+					"pathName": "pages/my/wallet/recharge/recharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 33,
+					"name": "设置成功",
+					"pathName": "pages/my/set/set-result/set-result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置",
+					"pathName": "pages/my/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "设置/重置支付密码",
+					"pathName": "pages/my/set/reset-password/reset-password",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邀请",
+					"pathName": "pages/my/invitation/invitation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账单",
+					"pathName": "pages/my/wallet/bill/bill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "保养",
+					"pathName": "pages/my/maintain/maintain",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加支付宝",
+					"pathName": "pages/home/home",
+					"query": "scene=33",
+					"scene": null
+				},
+				{
+					"id": 40,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": "scene=33",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "绑定微信",
+					"pathName": "pages/my/set/wxpay/wxpay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审核/订单",
+					"pathName": "pages/my/maintain/maintain-order/maintain-order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拍照",
+					"pathName": "pages/my/maintain/photograph/photograph",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审核状态",
+					"pathName": "pages/my/maintain/detail-status/detail-status",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邮寄信息",
+					"pathName": "pages/my/maintain/mail/mail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 46,
+					"name": "保养结果",
+					"pathName": "pages/my/maintain/maintain-result/maintain-result",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "审核订单",
+					"pathName": "pages/my/maintain/maintain-checked/maintain-checked",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "保养意见反馈",
+					"pathName": "pages/my/maintain/maintain-opinion/maintain-opinion",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

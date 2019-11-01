@@ -1,0 +1,17 @@
+<!--pages/my/nick/nick.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="昵称"
+>
+</navigation>
+<view class="content">
+  <view class="section">
+    <form bindsubmit="bindFormSubmit">
+    <text class="set-text">长度不得超过32个字符</text>
+      <input placeholder="请填写昵称" value="{{nickName}}" maxlength="32" name="textarea"/>
+      <button form-type="submit">确认修改</button>
+    </form>
+  </view>
+
+</view>

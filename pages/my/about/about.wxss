@@ -1,0 +1,71 @@
+.about-container {
+  background-color: #fff;
+}
+
+.about-banner {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.cooperation {
+  color: #393939;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  line-height: 58rpx;
+}
+
+.coo-title {
+  height: 36rpx;
+  font-size: 38rpx;
+  color:#1E1E1E;
+  text-align: center;
+  margin: 50rpx 0;
+}
+
+.coo-info-one, .coo-info-two{
+  text-indent: 30rpx;
+  text-align: left;
+}
+
+.culture {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.culture-title {
+  font-size: 38rpx;
+  color:#1E1E1E;
+  margin: 20rpx 0 50rpx 0;
+}
+
+.culture-img {
+  width: 690rpx;
+  height: 300rpx;
+  margin-bottom: 14rpx;
+}
+
+.culture-item {
+  width: 425rpx;
+  padding: 45rpx 22rpx 45rpx 50rpx;
+  margin: 0 126rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.culture-middle-img {
+  width: 6rpx;
+  height: 10rpx;
+  padding: 0 39rpx;
+} 
+
+.culture-left {
+  color: #272727;
+  font-size: 32rpx;
+}
+
+.culture-right {
+  font-size: 30rpx;
+  color:#5E5E5E;
+}

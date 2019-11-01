@@ -1,0 +1,47 @@
+<import src="/pages/common/products/products.wxml"/>
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="分类"
+>
+</navigation>
+<view class="content">
+
+  <view class="container category-container">
+    <view class="category-header">
+    <text class="category-text {{currentMenuIndex==0?'selected':''}}"
+        data-id="0" data-index='0' bindtap="changeCategory">全部</text>
+      <block wx:for="{{categoryTypeArr}}" wx:key="unique">
+        <text class="category-text {{currentMenuIndex==index+1?'selected':''}}"
+        data-id="{{item.id}}" data-index="{{index+1}}" bindtap="changeCategory"
+        >{{item.categoryName}}</text>
+      </block>
+    </view>
+    <view class="category-type-box">
+      <view class="top-type-box">
+        <text class="text-box {{sort==''?'is_select':''}}" data-sort="" bindtap="productSort">综合</text>
+        <text class="text-box {{sort=='salesVolume'?'is_select':''}}" data-sort="salesVolume" bindtap="productSort">销量</text>
+        <text class="text-box {{sort=='newTime'?'is_select':''}}" data-sort="newTime" bindtap="productSort">新品</text>
+        <view class="text-box {{isSelect?'is_select':''}}" data-sort="{{sort}}" bindtap="productPriceSort">
+          <text>价格 </text>
+          <view class="desc-aesc">
+            <view class="price-desc {{isActive?'select_price':''}}"></view>
+            <view class="price-aesc {{isSort?'select_price':''}}"></view>
+          </view>
+        </view>
+      </view>
+
+      <view>
+        <view class="product-box">
+          <template is="products" data="{{categoryDataArr:categoryDataArr}}" />
+          <!-- <view wx:if="{{moreGoods}}" class="more-goods">已全部加载完啦···</view> -->
+        </view>
+      </view>
+    </view>
+    <loading hidden="{{loadingHidden}}">
+      加载中...
+    </loading>
+  </view>
+
+</view>

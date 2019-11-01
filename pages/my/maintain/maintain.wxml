@@ -1,0 +1,160 @@
+<!--pages/my/maintain/maintain.wxml-->
+<import src="./clause/clause.wxml"/>
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="首饰保养"
+>
+</navigation>
+<view class="content">
+  <view class="container maintain-container">
+    <image class="maintain-img" src="https://img.laoliangli.com/label/maintain/maintain.png"></image>
+    <button class="contact-service" open-type='contact'>
+      <text class="iconfont icon-kefuerji"></text>
+      <text class="service">联系客服</text>
+      <text class="iconfont icon-xiangyou"></text>
+    </button>
+    <view class="maintain-box">
+        <view class="maintain">
+          <view class="maintain-tabbar">
+            <view class="maintain-nav" bindtap="showContactsTap">
+              <text>联系人信息</text>
+              <text class="maintain-nav-sub" wx:if="{{contacts}}">{{contacts}}<text class="phone">{{phone}}</text></text>
+              <text class="iconfont icon-xiangyou {{isContacts?'rotate':''}}"></text>
+            </view>
+            <view class="{{isContacts?'contacts-slidedown':'contacts-slideup'}}">
+              <form bindsubmit="bindsubmit">
+              <view class="contact-item">
+                <text class="labal">联系人</text>
+                <input type="text" maxlength="20" focus="{{focus}}" value="{{contacts}}" name="contacts" bindinput="bindContactsInput"/>
+              </view>
+              <view class="contact-item">
+                <text class="labal">联系电话</text>
+                <input type="number" maxlength="11" value="{{phone}}" name="phone" bindinput="bindPhoneInput"/>
+              </view>
+              <view class="contact-item item-btn">
+                <button class="contact-btn" disabled="{{isDisabled}}" form-type="submit">确认</button>
+              </view>
+              </form>
+            </view>
+            <view class="maintain-nav" bindtap="showMaterialTap">
+              <text>材质选择</text>
+              <text class="maintain-nav-sub" wx:if="{{material}}">{{material}}</text>
+              <text class="iconfont icon-xiangyou {{isMaterial?'rotate':''}}"></text>
+            </view>
+            <view class="maintain-item-box" wx:if="{{isMaterial}}" animation='{{animationData}}'>
+              <view class="maintain-item" wx:for="{{materialArr}}" data-index='{{index}}' wx:for-item="item" wx:key="unique" bindtap="checkedMaterial">
+                <view class="material-top">
+                  <image src="{{item.matImgUrl}}"></image>
+                  <icon type="success" color='red' size="18" wx:if="{{current==index}}"></icon>
+                </view>
+                <view class="material-title">{{item.matName}}</view>
+              </view>
+            </view>
+            <view class="maintain-nav" wx:if="{{isMoreMat}}" bindtap="showMaterialCategoryTap">
+              <text>材质类别</text>
+              <text class="maintain-nav-sub" wx:if="{{matCategory}}">{{matCategory}}</text>
+              <text class="iconfont icon-xiangyou {{isCategory?'rotate':''}}"></text>
+            </view>
+            <view class="category-box" wx:if="{{isCategory}}">
+              <view class="category-item" wx:for="{{categoryArr}}" wx:for-item="category" data-index="{{index}}" wx:key="unique" catchtap="checkedCategoryTap">
+                <view class="{{categoryCurrent==index?'item_category':'item'}}">{{category}}</view>
+                <icon type="success" color='red' size="18" wx:if="{{categoryCurrent==index}}"></icon>
+              </view>
+            </view>
+            <view class="maintain-nav" bindtap="showMaintainTap">
+              <text>保养项目</text>
+              <text class="iconfont icon-xiangyou {{maintainArr.length>0&&isMaintain?'rotate':''}}"></text>
+            </view>
+            
+            <view class="tips-top-box" wx:if="{{material=='贵金属'}}">·贵金属服务项目展示，具体保养项目工艺师检测后，会给出专业建议·</view>
+          </view>
+          <view class="project-box" style="height: {{isMaintain?'100%':'150rpx'}};">
+            <!-- <scroll-view scroll-y="true" style="height: {{isMaintain?(material!='贵金属'?680:320):150}}rpx"> -->
+              <view class="project-item {{arr.checked?'item_selected':''}}" wx:if="{{isMaintain}}" wx:for="{{maintainArr}}" wx:for-item="arr" data-id="{{arr.sid}}" wx:key="unique" bindtap="checkedMaintain">
+                <icon type="success" wx:if="{{arr.checked}}" color='red' size="18"></icon>
+                <view class="project-left" style='line-height: {{arr.serviceSubName?40:130}}rpx;'>
+                  <view class="left-item">
+                    <view class="title">{{arr.serviceName}}</view>
+                    <view class="mark" data-item="{{arr}}" catchtap="serviceDetailTap">?</view>
+                  </view>
+                  <view class="attr" wx:if="{{arr.serviceSubName !== arr.serviceName}}">
+                    <text> {{arr.serviceSubName}} </text>
+                  </view>
+                </view>
+                <view class="project-right" wx:if="{{arr.estimate}}"><view class="estimate">价格以工艺师评估后为准</view></view>
+                <view class="project-right" wx:else>
+                  <view class="activity {{arr.msomList.length>0?'activity':'activity_active'}}">
+                    <text>{{arr.msomList.length>0?'活动价：':'价格：'}}</text>
+                    <text class="activity-price">￥{{arr.nowPrice}}<text class="activity-symbol">/{{arr.unit}}</text></text>
+                  </view>
+                  <view class="origin-price" wx:if="{{arr.msomList.length>0}}">
+                    <text>原价：￥{{arr.servicePrice}}</text>
+                    <text class="activity-symbol">/{{arr.unit}}</text>
+                  </view>
+                  <view class="count" wx:if="{{arr.checked}}">
+                    <view class="reduce" data-index="{{index}}" catchtap="onReduceNum">
+                      <text class="iconfont icon-jianhao"></text>
+                    </view>
+                    <view class="number">{{arr.qty}}</view>
+                    <view class="add" data-index="{{index}}" catchtap="onAddNum">
+                      <text class="iconfont icon-jiahao-fill"></text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            <!-- </scroll-view> -->
+          </view>
+          <view class="maintain-nav order-msg" bindtap="orderMsgTap">
+            <text>订单备注</text>
+            <text class="maintain-nav-sub {{!msg?'msg':''}}">{{msg?msg:'(选填)'}}</text>
+            <text class="iconfont icon-xiangyou"></text>
+          </view>
+          <view class="tips-bottom-box">·以上为预估保养费用，最终以工艺师检测后为准·</view>
+        </view>
+    </view>
+
+    <view class="material-tabbar">
+        <view class="left" wx:if="{{estimate}}">
+          <text class="budget">
+            <text>预估费用：</text>
+            <text class="price">待评估</text>
+          </text>
+        </view>
+        <view class="left" wx:else>
+          <text class="budget">
+            <text>预估费用：</text>
+            <text class="price">￥{{totalPrice}}</text>
+          </text>
+        </view>
+        <button class="right" disabled="{{disabled}}" bindtap="confrimOrderTap">预约下单</button>
+    </view>
+
+    <view class="clause" wx:if="{{isClause}}"></view>
+    <view class="clause-box" wx:if="{{isClause}}">
+      <template is="clause" data="{{btnDisabled,checked}}" />
+    </view>
+
+    <view class='mask-layer' wx:if="{{isMsg}}"></view>
+    <view class="opinion-success" wx:if="{{isMsg}}">
+      <!-- <icon type='cancel' size='40' color='#fff' catchtap="closeInvitationTap"></icon> -->
+      <form bindsubmit="msgSubmit">
+        <view class="msg-box">
+          <view class="msg-title">订单备注</view>
+          <textarea placeholder='请填写您的订单备注~' focus="{{textFocus}}" fixed='true' auto-height="true" maxlength="-1" name="msg" value="{{textMsg}}"></textarea>
+          <button class="msg-confrim" form-type="submit">确定</button>
+        </view>
+      </form>
+    </view>
+
+    <view class="clause" wx:if="{{isServiceDetail}}" bindtap="cancelTap"></view>
+    <view class="service-detail" wx:if="{{isServiceDetail}}">
+      <view class="detail-box">
+        <view class="detail-title">{{serviceName}}</view>
+        <view class="detail-info">{{serviceRemark}}</view>
+      </view>
+      <icon type='cancel' size='40' color='#fff' bindtap="cancelTap"></icon>
+    </view>
+  </view>
+</view>

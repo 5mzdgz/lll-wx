@@ -1,0 +1,182 @@
+/* pages/order/aftermarket/aftermarket.wxss */
+page{ 
+  background: #fff;
+}
+
+.after-nav {
+  overflow: hidden;
+  padding: 14rpx 24rpx 14rpx 32rpx;
+  font-size: 26rpx;
+  color:#1E1E1E;
+  background-color: #fff;
+  text-align: center;
+}
+
+.after-nav text:nth-child(1) {
+  margin-right: 216rpx;
+}
+
+.selected {
+  border-bottom: 3rpx solid rgba(142,124,119,1);
+}
+
+.aftermarket-item {
+  width: 714rpx;
+  margin: 17rpx 18rpx 20rpx 18rpx;
+  background: #fff;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
+  border-radius: 14rpx;
+  padding-bottom: 20rpx;
+}
+
+.aftermarket-top .aftermarket-number {
+  font-size: 18rpx;
+  color:#6B6B6B;
+  height: 68rpx;
+  line-height: 68rpx;
+  padding-left: 28rpx;
+}
+
+.aftermarket-top .aftermarket-status {
+  padding-right: 28rpx;
+  float: right;
+  font-size:22rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  color:#EC4E4E;
+}
+
+.aftermarket-middle {
+  width: 714rpx;
+  padding: 0 28rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.aftermarket-middle .middle-img {
+  width: 196rpx;
+  height: 196rpx;
+  padding-right: 26rpx;
+}
+
+.middle-product .middle-left .middle-product-title {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+  width: 298rpx;
+  height: 56rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color:#1E1E1E;
+}
+
+.middle-product .middle-top {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.middle-product .middle-left .middle-product-size {
+  height:26rpx;
+  font-size:18rpx;
+  line-height:26rpx;
+  color:#6B6B6B;
+}
+
+.middle-top .product-price {
+  width: 148rpx;
+  text-align: right;
+  color:#6B6B6B;
+}
+
+.product-price .price-top {
+  height: 32rpx;
+}
+
+.middle-top .product-price .price {
+  height: 32rpx;
+  font-size:22rpx;
+  line-height:32rpx;
+}
+
+.symbol {
+  width:14rpx;
+  height:18rpx;
+  font-size:14rpx;
+  line-height:18rpx;
+}
+
+.product-price .product-count {
+  height:18rpx;
+  font-size:14rpx;
+  line-height:18rpx;
+}
+
+.middle-bottom {
+  text-align: right;
+  /* padding-top: 60rpx; */
+  margin-right: 20rpx;
+}
+
+.middle-bottom .payment-label {
+  width:90rpx;
+  height:26rpx;
+  font-size:18rpx;
+  line-height:26rpx;
+  color:#1E1E1E;
+}
+
+.middle-bottom .payment-price {
+  height:32rpx;
+  font-size:22rpx;
+  line-height:32rpx;
+  color:#6B6B6B;
+}
+
+.middle-bottom .red-symbol {
+  width:14rpx;
+  height:18rpx;
+  font-size:14rpx;
+  line-height:18rpx;
+  color:#EC4E4E;
+}
+
+.middle-bottom .red-payment-price {
+  height:32rpx;
+  font-size:22rpx;
+  line-height:32rpx;
+  color:#EC4E4E;
+}
+
+.aftermarket-bottom {
+  padding: 4rpx 24rpx;
+  margin: 16rpx 0 0 570rpx;
+  width:72rpx;
+  font-size:18rpx;
+  line-height:26rpx;
+  color:#6B6B6B;
+  border: 1rpx solid #6B6B6B;
+  border-radius: 14rpx;
+}
+
+.order-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-empty .order-empty-img {
+  width: 486rpx;
+  height: 306rpx;
+  margin-top: 120rpx;
+}
+
+.order-empty-text {
+  height: 50rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 50rpx;
+  color:rgba(141,141,141,1);
+}

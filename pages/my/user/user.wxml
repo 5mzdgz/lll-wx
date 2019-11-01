@@ -1,0 +1,35 @@
+<!-- <template name="userInfo"> -->
+
+<navigation id='Navigation' show-icon='{{showIcon}}' title="编辑个人资料">
+</navigation>
+<view class="content">
+  <view class="user-info-box">
+
+    <view class="change-head-img" bindtap="changeHead">   
+      <image class="user-img" src="{{headImgUrl?headImgUrl:'https://img.laoliangli.com/label/my/authorImg_icon.png'}}" />
+      <text class="text">编辑头像</text>
+    </view>
+
+    <view class="item-box">
+      <view class="user-items nick-items" bindtap="changeNickName">
+        <text class="user-left">昵称</text>
+        <text class="user-right {{nickName=='未填写'?'textcolor':''}}">{{nickName}}</text>
+        <image class="user-right-img" src="https://img.laoliangli.com/label/my/arrow_right.png" />
+      </view>
+
+      <picker value="{{index}}" range="{{array}}" bindchange="changeSex">
+        <view class="user-items">
+          <text class="user-left">性别</text>
+          <text class="user-right {{sex=='未填写'?'textcolor':''}}">{{sex}}</text>
+          <image class="user-right-img" src="https://img.laoliangli.com/label/my/arrow_right.png" />
+        </view>
+      </picker>
+
+      <view class="user-items autograph-box" bindtap="changeAut">
+        <text class="user-left">个性签名</text>
+        <text class="user-right-autograph {{autograph=='未填写'?'textcolor':''}}">{{autograph}}</text>
+        <image class="user-right-img autograph-img" src="https://img.laoliangli.com/label/my/arrow_right.png" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,385 @@
+/* pages/product/product.wxss */
+@import 'detail-picture/detail-picture.wxss';
+
+.content {
+  background: #F3F3F3;
+}
+
+.detail {
+  background-color: rgba(244,244,244,1);
+}
+
+.swiper-container{
+  position: relative;
+}
+.swiper-container .swiper{
+  height: 733rpx;
+  width: 100%;
+}
+.swiper-container .swiper .item-image{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dots .dot{
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #e0dfdf;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+.swiper-container .dots .dot.active{
+  width: 30rpx;
+  background: #fff;
+}
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.coversrc{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.playbtn {
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 3rem;
+  height:3rem;
+  margin-top:-1.5rem;
+  margin-left: -1.5rem;
+  text-align: center;
+}
+
+.playbtn image {
+  width: 3rem;
+  height:3rem;
+}
+
+.playbtn text{
+  font-size: 120rpx;
+  color: #f2f2f2;
+}
+
+.detail-box {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 27rpx;
+  background-color: #fff;
+}
+
+.detail-left-box .left-title {
+  width: 500rpx;
+  font-size: 32rpx;
+  color:rgba(47,47,47,1);
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.detail-left-box .left-pirce {
+  padding: 20rpx 0;
+  font-size: 42rpx;
+  font-weight: 500;
+  color:rgba(40,40,40,1);
+}
+
+.detail-left-box .left-express {
+  font-size: 24rpx;
+  color:rgba(121,121,121,1);
+}
+
+.detail-right-box {
+  background: #fff;
+  width: 200rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  color: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30rpx; 
+  margin-top: 5rpx; 
+  text-align: center;
+}
+
+.detail-right-box .share{
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  color:rgba(121,121,121,1);
+}
+
+.detail-right-box image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.right-share {
+  position: relative;
+  width: 120rpx;
+  margin-top: 10rpx; 
+}
+
+.right-share .share {
+  position: absolute;
+  top: 11%;
+  right: 0;
+  padding: 0 20rpx 0 10rpx;
+  font-size: 24rpx;
+  color:rgba(107,107,107,1);
+}
+
+.detail-pictrue {
+  padding-bottom: 100rpx;
+  background: #fff;
+}
+
+/* tabbar */
+
+.detail-tabbar {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-top: 1px solid rgba(238,238,238,1);
+  background: #fff;
+}
+
+.detail-img {
+  width: 260rpx;
+  margin: 30rpx 41rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detail-img .car-img {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.detail-img .comment-img {
+  width: 52rpx;
+  height: 52rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.detail-img .comment-img .button-img {
+  width: 52rpx;
+  height: 52rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-box {
+  position: relative;
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.like-img {
+  position: absolute;
+  left: -1rpx;
+  width: 42rpx;
+  height: 34rpx;
+}
+
+.background-img {
+  background: rgb(77, 73, 73);
+  background-size: 35rpx 28rpx;
+  background-repeat: no-repeat;
+}
+
+.comment-img .button-img {
+  float: left;
+  width: 41rpx;
+  height: 40rpx;
+}
+
+.detail-add {
+  width: 245rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background:rgba(96,96,96,1);
+  text-align: center;
+}
+
+.detail-purchase {
+  width: 245rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background:rgba(231,44,44,1);
+  text-align: center;
+}
+
+/* 点击加入购物车浮窗 */
+
+.header {
+  padding: 50rpx 27rpx 0 17rpx;
+}
+
+.header .header-img {
+  width: 241rpx;
+  height: 241rpx;
+  margin-right: 30rpx;
+}
+
+.header-right {
+  margin-right: 77rpx;
+}
+
+.header-title {
+  width: 314rpx;
+  height: 55rpx;
+  font-size: 20rpx;
+  color:#1E1E1E;
+}
+
+.header-size {
+  padding-bottom: 9rpx;
+  font-size: 18rpx;
+  color:#6B6B6B;
+}
+
+.header-price {
+  width: 97rpx;
+  height: 22rpx;
+  font-size: 28rpx;
+  color:#E72C2C;
+}
+
+.header .close {
+  margin-top: -18rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* 浮窗中部 */
+.body-info {
+  /* height: 400rpx; */
+  padding: 0 26rpx;
+  margin-bottom: 140rpx;
+  line-height: 60rpx;
+}
+/*全部属性的主盒子*/
+.commodity_attr_list { 
+ background: #fff; 
+ padding: 0 20rpx; 
+ font-size: 26rpx; 
+ overflow: hidden; 
+ width: 100%; 
+} 
+/*每组属性的主盒子*/
+.attr_box { 
+ width: 100%; 
+ overflow: hidden; 
+} 
+/*属性名*/
+.attr_name { 
+ width: 20%; 
+ float: left; 
+ padding: 15rpx 0; 
+} 
+/*属性值*/
+.attr_value_box { 
+ width: 80%; 
+ float: left; 
+ padding: 15rpx 0; 
+ overflow: hidden; 
+} 
+/*每个属性值*/
+.attr_value { 
+ float: left; 
+ padding: 0 10rpx; 
+ margin: 0 10rpx; 
+ border: 1rpx solid #ececec; 
+ margin-bottom: 20rpx;
+} 
+/*每个属性选中的当前样式*/
+.attr_value_active { 
+ background: #E72C2C; 
+ border-radius: 10rpx; 
+ color: #fff; 
+ padding: 0 10rpx; 
+} 
+/*禁用属性*/
+.attr_value_disabled { 
+ color: #ccc; 
+} 
+
+.body-info .shop-count {
+  font-size: 30rpx;
+  color:#313131;
+  margin-right: 300rpx;
+}
+
+.shop-right-count {
+  float: right;
+  width: 230rpx;
+  background:#F8F8F8;
+  text-align: center;
+}
+
+.shop-reduce {
+  font-size: 36rpx;
+}
+
+.reduce-one {
+  color: rgb(214, 206, 206);
+}
+
+.shop-counts {
+  font-size: 29rpx;
+  color: #2C2C2C;
+  padding: 0 68rpx;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background:#E72C2C;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 0;
+}

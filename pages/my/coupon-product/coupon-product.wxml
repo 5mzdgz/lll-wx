@@ -1,0 +1,39 @@
+<!--pages/my/coupon-product/coupon-product.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="优惠卷商品"
+>
+</navigation>
+<view class="content">
+  <view class="category-type-box" hidden="{{!loadingHidden}}">
+    <view class="top-type-box">
+      <text class="text-box {{sort==''?'is_select':''}}" data-sort="" bindtap="productSort">综合</text>
+      <text class="text-box {{sort=='salesVolume'?'is_select':''}}" data-sort="salesVolume" bindtap="productSort">销量</text>
+      <text class="text-box {{sort=='newTime'?'is_select':''}}" data-sort="newTime" bindtap="productSort">新品</text>
+      <view class="text-box {{isSelect?'is_select':''}}" data-sort="{{sort}}" bindtap="productPriceSort">
+        <text>价格 </text>
+        <view class="desc-aesc">
+          <view class="price-desc {{isActive?'select_price':''}}"></view>
+          <view class="price-aesc {{isSort?'select_price':''}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="product-list"> 
+    <block wx:for="{{cplist}}" wx:key="index">
+      <view class="product-item" bindtap="onRecommendItems" data-id="{{cplist[index].id}}">
+        <image class="product-item-img" mode="aspectFill" src="{{cplist[index].defaultImgUrl}}" />
+        <view class="product-item-bottom">
+          <view class="product-title">{{cplist[index].title}}</view>
+          <view class="product-price">￥{{cplist[index].nowPrice}}</view>
+        </view>
+      </view>
+    </block>
+    <!-- <view wx:if="{{moreGoods}}" class="more-goods">已全部加载完啦···</view> -->
+  </view>
+  <loading hidden="{{loadingHidden}}">
+      加载中...
+  </loading>
+</view>

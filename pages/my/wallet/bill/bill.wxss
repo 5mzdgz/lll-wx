@@ -1,0 +1,103 @@
+/* pages/my/wallet/bill/bill.wxss */
+page {
+  background: #f9f9f9;
+}
+
+.bill-box {
+  padding-bottom: 30rpx; 
+  background: #fff;
+}
+
+.time-total {
+  height: 120rpx;
+  padding: 0 36rpx;
+  background: #f9f9f9;
+  overflow: hidden;
+  clear: both;
+}
+
+.time-total .time {
+  float: left;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  height: 60rpx;
+  width: 166rpx;
+  border-radius: 30rpx;
+  background: #fff;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.time-total .total {
+  height: 120rpx;
+  font-size: 24rpx;
+  color: #7E7E7E;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.bill-item {
+  height: 134rpx;
+  overflow: hidden;
+  clear: both;
+  background: #fff;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.bill-item .content-box {
+  margin-left: 26rpx;
+  height: 134rpx;
+  float: right;
+  width: 600rpx;
+  border-bottom: 2px solid #ececec;
+  overflow: hidden;
+  clear: both;
+}
+
+.content-box .content {
+  height: 134rpx;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content .title {
+  padding-bottom: 6rpx;
+  font-size: 26rpx;
+}
+
+.content .time-sub {
+  font-size: 20rpx;
+  color: #7E7E7E;
+}
+
+.bill-item .content-box .money {
+  float: right;
+  line-height: 134rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.bill-item .bill-left {
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.on-bill {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  background: #f9f9f9;
+  color: #7E7E7E;
+  text-align: center;
+}

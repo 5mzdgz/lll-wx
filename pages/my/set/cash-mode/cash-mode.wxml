@@ -1,0 +1,27 @@
+<!--pages/my/cash-mode/cash-mode.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="提现方式"
+>
+</navigation>
+<view class="content">
+  <view class="container mode-container">
+    <view class="body-item"  wx:for="{{cashMode}}" wx:for-item="modeItem" wx:key="unique" data-item="{{modeItem}}" bindtap="checkMode">
+      <view class="conter">
+        <image class="wx-img" src="{{modeItem.modeImg}}"></image>
+        <text class="sub">{{modeItem.payeeName}}</text>
+      </view>
+      <view class="cash-right">
+        <image class="mark" wx:if="{{!modeItem.account}}" src="https://img.laoliangli.com/label/wallet/mark_icon.png"></image>
+        <text class="account {{!modeItem.account?'account_active':''}}">{{modeItem.account?modeItem.account:'未绑定'}}</text>
+        <text wx:if="{{!modeItem.account}}" class="iconfont icon-xiangyou"></text>
+      </view>
+    </view>
+    
+    <!-- <view class="footer">
+      <text>更改提现资料 </text>
+      <image class="arrow-right" src="https://img.laoliangli.com/label/my/arrow_right.png"></image>
+    </view> -->
+  </view>
+</view>

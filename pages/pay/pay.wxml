@@ -1,0 +1,142 @@
+<!--pages/pay-result/pay-result.wxml-->
+<import src="pay-result/pay-result.wxml" />
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title=""
+>
+</navigation>
+<view class="content">
+
+  <view class="container pay-container">
+    <view class="address"  wx:if="{{isAddress}}" bindtap="addressTap">
+      <image class="address-left-img" src="https://img.laoliangli.com/label/my/address_icon.png" />
+      <view class="address-middle">
+        <view class="middle-top">
+          <text class="address-user">{{userName}}</text>
+          <text class="address-phone">{{userPhone}}</text>
+        </view>
+        <view class="address-text">{{province}}{{city}}{{area}}{{address}}</view>
+      </view>
+      <image class="address-right-img" src="https://img.laoliangli.com/label/my/arrow_right.png"/>
+    </view>
+
+    <view class="adderss-box" wx:else bindtap="addAaddressTap">
+      <text class="add-address">+</text>
+      <text class="add-text">添加收货地址</text>
+      <image src="https://img.laoliangli.com/label/my/arrow_right.png"/>
+    </view>
+
+    <view class="pay-products" wx:for="{{cpList}}" wx:key="unipue">
+      <image src="{{item.defaultImgUrl}}"/>
+      <view class="pay-pro-title">{{item.title}}</view>
+      <view class="pay-pro-price">￥{{item.nowPrice}}</view>
+      <text class="pay-count">x{{item.qty}}</text>
+    </view>
+
+    <view class="table-box">
+      <text class="table-left">商品总价</text>
+      <text class="table-right">￥{{total}}</text>
+    </view>
+    <view class="table-box">
+      <text class="table-left">运费</text>
+      <text class="table-right">￥0.00</text>
+    </view>
+    <view class="table-box">
+      <text class="table-left">优惠金额</text>
+      <text class="table-right">￥{{offerPrice}}</text>
+    </view>
+    <view class="table-box">
+      <text class="table-left">优惠券</text>
+      <text class="table-right" catchtap="orderCouponTap" wx:if="{{couponId !== '' && couponId !== 'none'}}">有可使用优惠券</text>
+      <text class="table-right"  wx:if="{{couponId === ''}}">无可使用优惠券</text>
+      <text class="table-right"  catchtap="orderCouponTap" wx:if="{{couponId === 'none'}}">不使用优惠卷</text>
+    </view>
+    <view class="table-box" catchtap="payMethodsTap">
+      <text class="table-left">支付方式</text>
+      <text class="table-right">{{payMethods}}<text class="iconfont icon-xiangyou"></text></text>
+    </view>
+    <view class="message-tap">
+       <view class="table-box" bindtap="messageTap">
+        <text class="table-left">留言</text>
+        <text class="table-right">填写备注</text>
+      </view>
+      <view class="message" wx:if="{{isMessage}}">
+        <textarea placeholder="写留言，140个字节内" value='{{textareaVal}}' bindblur='bindTextAreaBlur' focus="{{focus}}"/>
+      </view>
+    </view>
+
+    <view class="pay-tabbar-box">
+      <view class="tabbar-left">
+        <text class="pay-total">合计：</text>
+        <text class="pay-money">￥{{total}}</text>
+      </view>
+      <button class="tabbar-pay" bindtap='clickPayTap' disabled="{{disabled}}">支付</button>
+    </view>
+
+    <view class='mask-layer' wx:if="{{showPop}}" bindtap='hideModal'></view>
+    <view class='pop-add-cart pop-common' wx:if="{{showPop}}" animation='{{animationData}}'>
+      <view class='header header-row'>
+        {{title}}
+      </view>
+      <view class="body-text">
+        <scroll-view scroll-y="true" style="height: 200px" wx:if="{{isCoupon}}">
+          <view class="coupon-box" wx:for="{{couponArr}}" wx:for-item="couponItem" wx:for-index="index" wx:key="unipue" bindtap="checkCouponTap" data-index="{{index}}">
+            <text class="coupon-text-item">{{couponItem.couponTitle}}：{{couponItem.coupon.couponName}} ￥{{couponItem.offerPrice}}</text>
+            <view class="checkbox">
+              <icon type="circle" size="18" wx:if="{{!couponItem.checked}}"></icon>
+              <icon type="success" color='red' wx:if="{{couponItem.checked}}" size="17"></icon>
+            </view>
+          </view>
+          <view class="coupon-box" data-index='index' bindtap="onCheckCouponTap">
+            <text class="coupon-text-item">不使用优惠卷</text>
+            <view class="checkbox">
+              <icon type="circle" size="18" wx:if="{{!checked}}"></icon>
+              <icon type="success" color='red' wx:if="{{checked}}" size="17"></icon>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="pay-methods" wx:else>
+          <view class="pay-methods-box" wx:for="{{payMethodsArr}}" wx:for-item="payItem" data-item="{{payItem}}" wx:key="unipue" bindtap="payMethodsChecked">
+            <text class="pay-methods-title">{{payItem.payMethods}}</text>
+            <text class="pay-methods-sub" wx:if="{{payItem.payMethodId==3}}">{{payItem.subTitle}}</text>
+            <view class="pay-checkbox" wx:if="{{payItem.payMethodId==3&&!payItem.vip}}">{{payItem.targetTitle}}</view>
+            <view class="pay-checkbox" wx:if="{{payItem.vip}}">
+              <icon type="circle" size="18" wx:if="{{payMethodId !== payItem.payMethodId}}"></icon>
+              <icon type="success" color='red' wx:if="{{payMethodId === payItem.payMethodId}}" size="17"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='footer toolbar' bindtap="couponConfrimTap">
+        确定
+      </view>
+    </view>
+
+
+    <view class="hidan-box" wx:if="{{isShow}}"></view>
+    <view class="show-box" wx:if="{{isShow}}">
+      <view class="header">
+        <text class="colse" catchtap="closeHiddanTap">×</text>
+        <text class="title">请输入支付密码</text>
+      </view>
+      <form bindsubmit="formSubmit">
+      <view class="body-box">
+        <view class="body-name">支付</view>
+        <view class="money-box">
+          <text class="symbol">￥</text>
+          <text class="money">{{total}}</text>
+        </view>
+        <view class="phone">+86 {{sPhone}}</view>
+        <view class="short-message">
+          <input class="codeInput" type="number" name="code" value="{{code}}" maxlength='4' placeholder='请输入短信验证码'/>
+          <text class="right send" disabled='{{shortDisabled}}' bindtap='getVerificationCode'>{{codename}}</text>
+        </view>
+        <input class="passInput" type="text" name="payPassword" password="true" focus='{{payFocus}}' maxlength="16" placeholder-class='place' placeholder='请输入交易密码' />
+      </view>
+      <button class="pass-confrim" form-type="submit">确定</button>
+      </form>
+    </view>
+  </view>
+</view>

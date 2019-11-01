@@ -1,0 +1,107 @@
+<!--pages/my/invitation/invitation.wxml-->
+<import src="./clause/clause.wxml"/>
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="邀请好友得返利"
+>
+</navigation>
+<view class="content">
+  <view class="container invitation-container">
+    <image class="invitation-banner" mode='widthFix' src="https://img.laoliangli.com/label/invitation/invitation_banner.png" />
+    <view class="rule" catchtap="ruleTap">活动规则</view>
+    <button class="share" open-type='share'>立即分享</button>
+    <view class="two-btm">
+      <button class="generate" catchtap="generateTap">
+        <image class="invitation-banner" src="https://img.laoliangli.com/label/invitation/generate_icon.png" />
+        <text>生成海报</text>
+      </button>
+      <button class="face" catchtap="faceTap">
+      <image class="invitation-banner" src="https://img.laoliangli.com/label/invitation/face_icon.png" />
+      当面邀请</button>
+    </view>
+  </view>
+
+    <view class="clause" wx:if="{{isClause}}"></view>
+    <view class="clause-box" wx:if="{{isClause}}">
+      <template is="clause" />
+    </view>
+    <view class="clause-icon" wx:if="{{isClause}}" bindtap="ruleCancelTap">
+      <icon type='cancel' size='40' color='#fff'></icon>
+    </view>
+
+
+  <canvas style="width: 462px;height: 822px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+
+  <view class='mask-layer' wx:if="{{isCode}}"></view>
+  <view class="opinion-success" wx:if="{{isCode}}" catchtap="cancelTap">
+    <view class="code-box">
+      <image src="{{facePath}}" />
+      <view class="popup-title">让朋友扫一扫二维码</view>
+      <view>邀请他加入老良利</view>
+    </view>
+    <icon type='cancel' size='40' color='#fff' catchtap="cancelTap"></icon>
+  </view>
+  
+  <view class='mask-layer' wx:if="{{isPoster}}"></view>
+  <view class="opinion-success" wx:if="{{isPoster}}">
+    <view class="swiper-container">
+      <swiper class="swiper"
+      autoplay="{{bannerAutoplay}}" 
+      interval="{{interval}}"
+      duration="{{duration}}"
+      circular="{{circular}}"
+      bindchange="swiperChange"
+      previous-margin="140rpx"
+      next-margin="140rpx"
+      bindchange='swiperBannerChange'
+      >
+        <block wx:for="{{posterBgmArr}}" wx:key="{{index}}">
+          <swiper-item class="banner-item" data-item="{{item}}" data-item="{{item}}">
+            <image class="item-image {{index == current?'active_img':''}}" src="{{item}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{posterBgmArr}}" wx:key="unique">
+          <view class="dot{{index == current ? ' active ' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+    <button class="confirmTap" disabled="{{disabled}}" catchtap="confirmTap">保存</button>
+    <icon type='cancel' size='40' color='#fff' catchtap="posterCancelTap"></icon>
+  </view>
+
+  <view class="commission">
+    <view class="commission-top">
+      <view class="top-item item-left">
+        <text>总佣金：</text>
+        <text class="money">{{totalAmount}}</text>
+      </view>
+      <view class="top-item">已返：{{returnAmount}}</view>
+      <view class="top-item item-right">待返：{{notReturnAmount}}</view>
+    </view>
+    <view class="commission-middle">
+      <view class="top-item item-left">
+        <text>已邀请 ({{totalRecord}})</text>
+      </view>
+      <view class="top-item">订单数</view>
+      <view class="top-item">订单金额</view>
+      <view class="top-item item-right">佣金</view>
+    </view>
+    <view class="commission-bottom" wx:for="{{userArr}}" wx:for-item="item" wx:key="unique">
+      <view class="bottom-item item-left">
+        <image class="user-img" src="{{item.userHeadImgage?item.userHeadImgage:'https://img.laoliangli.com/label/my/authorImg_icon.png'}}" />
+        <view class="user-info">
+          <view class="user-name">{{item.nickName=='null'?item.account:item.nickName}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class="bottom-item">{{item.orderCount}}</view>
+      <view class="bottom-item">{{item.orderAmount}}</view>
+      <view class="bottom-item item-right">{{item.commission}}</view>
+    </view>
+   
+  </view>
+</view>

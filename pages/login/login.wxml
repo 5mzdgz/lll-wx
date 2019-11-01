@@ -1,0 +1,36 @@
+<!--index.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="登录"
+>
+</navigation>
+<view class="content">
+  <view class="container">
+    <view  wx:if="{{closeLogin}}" class="login-container">
+      <view class="author-avatar">
+        <image src="https://img.laoliangli.com/label/common/logo.png"/>
+      </view>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo='bindGetUserInfo' class="btn-img">
+        <image src="https://img.laoliangli.com/label/common/wx_icon.png" />
+      微信登陆</button>
+      <button bindtap="number">手机验证码登录</button>
+    </view>
+
+    <view class='zation' wx:else>
+      <view class="zation-box">
+        <view class="zation-header">微信授权</view>
+        <view class="zation-middle">
+          <image src="https://img.laoliangli.com/label/common/checked_icon.png" />
+          <view class="zation-title">微信授权成功</view>
+          <view class="zation-text">授权绑定你的手机号码</view>
+        </view>
+        <view class="zation-footer">
+          <button class="footer-left" bindtap="refuse">拒绝</button>
+          <button class="footer-right" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">允许</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/my/set/set.wxml-->
+
+<!--pages/my/set-result/set-result.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="设置"
+> 
+</navigation>
+<view class="content">
+  <view class="container set-container">
+    <view class="item-box" wx:for="{{setArr}}" wx:for-item="item" wx:if="{{item.grade}}" wx:key="unique" data-id="{{item.id}}" catchtap="navitageTap">
+      <view class="item-left">
+        <image src="{{item.iconImg}}"></image>
+        <text>{{item.setTitle}}</text>
+      </view>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+</view>
+

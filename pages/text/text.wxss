@@ -1,0 +1,8 @@
+/* pages/text/text.wxss */
+
+.section {
+  width: 400rpx;
+  height: 400rpx;
+  background: #f8f8f8;
+  display: 
+}

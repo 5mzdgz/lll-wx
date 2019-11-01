@@ -1,0 +1,175 @@
+.content{
+  height: 100vh;
+  background: #fff;
+  padding-top: 1rpx;
+}
+
+.result-box {
+  background: #fff;
+  text-align: center;
+  padding-top: 108rpx;
+  margin-top: 10rpx;
+}
+
+.result-box .result-img-success {
+  width: 346rpx;
+  height: 330rpx;
+}
+
+.success-text {
+  height: 50rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color:#1E1E1E;
+}
+
+.pack-text {
+  height: 34rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color:#777777;
+  padding: 20rpx 0 96rpx 0;
+}
+
+.par-checks {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  width: 244rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-radius: 44rpx;
+  color: #8D8D8D;
+}
+
+.btn-two {
+  background: #FF4848;
+  color: #fff;
+}
+
+.result-img-fail {
+  width: 418rpx;
+  height: 276rpx;
+}
+
+.hidan-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 20;
+  opacity: 0.3;
+}
+
+.show-box {
+  position: fixed;
+  left: 13.33%;
+  top: 21%;
+  width: 73.33%;
+  background: #fff;
+  z-index: 30;
+  border-radius: 12rpx;
+}
+
+.show-box .header {
+  border-bottom: 1px solid #D6D6D6;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.header .colse {
+  color: #c2c2c2;
+  padding-left: 20rpx;
+}
+
+.header .title {
+  margin-left: 23%;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.body-box {
+  position: relative;
+  text-align: center;
+}
+
+.body-box .body-name {
+  font-size: 28rpx;
+  padding: 30rpx 0;
+}
+
+.body-box .money-box {
+  font-weight: 900;
+}
+
+.money-box .symbol {
+  font-size: 30rpx;
+}
+
+.body-box .phone {
+  width: 100%;
+  text-align: left;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.short-message .codeInput {
+  background: #eee;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius:14rpx;
+}
+
+.short-message .right {
+  color:#fff;
+  font-size: 26rpx;
+  background: #EC4E4E;
+  margin-left: 5%;
+  width: 45%;
+  border-radius:14rpx;
+}
+
+.body-box .short-message {
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+}
+
+.pass-confrim {
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  background: #EC4E4E;
+  border-radius: 0;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  
+}
+
+.passInput {
+  position: relative;
+  bottom: 0;
+  margin: 30rpx 30rpx 48rpx 30rpx;
+  /* left: -300rpx; */
+  border-radius: 14rpx;
+  background: #F8F8F8;
+  font-size: 30rpx;
+  text-align: left;
+  border: 1px solid #D9D9D9;
+  padding: 0 30rpx;
+  height: 70rpx;
+}
+
+.place {
+  font-size: 26rpx;
+}

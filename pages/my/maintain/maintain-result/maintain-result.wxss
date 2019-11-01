@@ -1,0 +1,70 @@
+/* pages/my/maintain/maintain-result/maintain-result.wxss */
+.result-contaniner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 110rpx;
+}
+
+.order-img {
+  width: 264rpx;
+  height: 264rpx;
+}
+
+.success-img {
+  width: 346rpx;
+  height: 330rpx;
+}
+
+.fail-img {
+  width: 418rpx;
+  height: 276rpx;
+}
+
+.result-title {
+  margin-top: 50rpx;
+  font-size: 36rpx;
+}
+
+.result-subTitle {
+  margin-top: 20rpx;
+  color: #777777;
+}
+
+.result-btn {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  font-size: 36rpx;
+  margin-top: 100rpx;
+}
+
+.home-btns {
+  line-height: 74rpx;
+  border: 1px solid #8d8d8d;
+  color: #8d8d8d;
+  background: #fff;
+  border-radius: 37rpx;
+  width: 244rpx;
+}
+
+.check-btns {
+  margin-left: 142rpx;
+  width: 244rpx;
+  line-height: 74rpx;
+  /* border: 1px solid #8d8d8d; */
+  color: #fff;
+  background: #FF4848;
+  border-radius: 37rpx;
+}
+
+.express-number {
+  margin-top: 100rpx;
+  font-size: 38rpx;
+  color: #fff;
+  background: #FF4848;
+  width: 474rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-radius: 37rpx;
+}

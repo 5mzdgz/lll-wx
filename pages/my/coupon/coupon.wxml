@@ -1,0 +1,55 @@
+<!--pages/coupon/coupon.wxml-->
+
+<!-- <template name="coupon"> -->
+
+<navigation id='Navigation' show-icon='{{showIcon}}' title="{{tabbarTitle}}">
+</navigation>
+<view class="content">
+  
+  <view class="container coupon-container">
+    <view class="coupon-item-box" wx:for="{{couponData}}" wx:key="unipue">
+      <block wx:if="{{item.couponType==1}}">
+        <image src="https://img.laoliangli.com/label/common/b_coupon.png" />
+        <view class="coupon-left-discount">
+          <text class="coupon-left-price" style="font-size: {{item.offer>=100?80:114}}rpx;"><text class="coupon-syboml">￥</text>{{item.offer}}</text>
+        </view>
+        <view class="coupon-right-box">
+          <view class="coupon-title">满{{item.fullAmount}}元可用</view>
+          <view class="coupon-time-box">
+            有效期{{item.endTime}} 
+            <text wx:if="{{item.expirationTime}}"> 剩<text class="coupon-expire">{{item.expirationTime}}天</text>到期</text>
+          </view>
+          <view class="gouse">
+            <text class="use-left">指定商品满{{item.fullAmount}}.00元减少{{item.offer}}.00元</text>
+            <text class="use-right-coupon" data-coupon="{{item.couponCode}}" catchtap="goUseTap">去使用></text>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{item.couponType==2}}">
+        <image src="https://img.laoliangli.com/label/common/b-discount.png" />
+        <view class="coupon-left-discount">
+          <text class="coupon-left-price">{{item.discount}}<text class="discount-syboml">折</text></text>
+        </view>
+        <view class="coupon-right-box">
+          <view class="coupon-title-discount">{{item.couponName}}</view>
+          <view class="coupon-time-box">
+            有效期{{item.endTime}} 
+            <text wx:if="{{item.expirationTime}}">剩<text class="coupon-expire">{{item.expirationTime}}天</text>到期</text>
+          </view>
+          <view class="gouse">
+            <text class="use-left">{{item.couponDescription}}</text>
+            <text class="use-right-discount" data-coupon="{{item.couponCode}}" catchtap="goUseTap">去使用></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="no-coupon" wx:if="{{couponData.length==0}}">
+    <image src="https://img.laoliangli.com/label/common/empty_cart.png" />
+    <text>你暂时还没有优惠券！</text>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

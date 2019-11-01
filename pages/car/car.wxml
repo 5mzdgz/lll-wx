@@ -1,0 +1,82 @@
+<!--pages/car/car.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="购物车"
+>
+</navigation>
+<view class="content">
+
+  <view class="container car-container">
+    <view class="car-box" wx:if="{{carDataArr}}">
+      <checkbox-group bindchange="checkboxChange">
+        <block wx:for="{{carDataArr}}" wx:for-item="carData" wx:key="unique">
+          <view class="goodsItem" bindtouchstart="touchstart">
+            <swiper previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}">
+              <swiper-item class="goodsMsg">
+                <label class="checkbox">
+                  <checkbox value="{{carData.pid}}" checked="{{carData.checked}}" hidden='hidden' />
+                  <icon type="circle" size="23" wx:if="{{!carData.checked}}"></icon>
+                  <icon type="success" color='red' size="23" wx:if="{{carData.checked}}"></icon>
+                </label>
+                <view class="car-item-middel">
+                  <navigator url="../product/product?id={{carData.pid}}">
+                    <image class="item-middle-img" src="{{carData.defaultImgUrl}}"/>
+                  </navigator>
+                </view>
+                <view class="car-item-right">
+                  <text class="item-right-title">{{carData.title}}</text>
+                  <block wx:for="{{carData.attributesMap}}" wx:for-index="key" wx:key="unique">
+                    <view class="item-right-color">{{key}}：{{item}}</view>
+                  </block>
+                  <view class="item-right-price">{{carData.nowPrice}}￥</view>
+                  <view class="item-right-count">
+                    <view class="reduce {{carData.qty==1?'reduce_one':''}}" data-id="{{carData.pid}}" data-index="{{index}}" bindtap="onReduceNum">-</view>
+                    <view class="count">{{carData.qty}}</view>
+                    <view class="add" data-index="index" data-id="{{carData.pid}}" data-index="{{index}}" bindtap="onAddNum">+</view>
+                  </view>
+                </view>
+              </swiper-item>
+              <swiper-item class="delBtn">
+                <view class="col-box-middle">
+                  <text class="col-move" data-id="{{carData.pid}}" bindtap="collectionTap">　移入　
+                收藏夹</text>
+                </view>
+              </swiper-item>
+              <swiper-item>
+                <view class="del-box" data-index="{{index}}" data-id="{{carData.id}}" bindtap="deleteCarItem"> 删除</view>
+              </swiper-item>
+            </swiper>
+          </view>
+        </block>
+      </checkbox-group>
+
+      <view class="settlement">
+        <view class="set-left">
+          <checkbox-group bindchange="selectalltap">
+            <label class='checkbox-allcheck'>
+              <checkbox value="{{!checkAll}}" checked="{{checkAll}}" hidden='hidden' />
+              <icon type="circle" size="23" wx:if="{{!checkAll}}"></icon>
+              <icon type="success" color='red' size="23" wx:if="{{checkAll}}"></icon>
+            </label>
+          </checkbox-group>
+          <text class='check-all-text'>全选</text>
+          <text class="car-tabbar">
+            <text class="set-middle-box">合计：</text>
+            <text class="right-price-box">￥{{itemTotalPrice}}</text>
+          </text>
+        </view>
+        <view class="set-right-box" bindtap="goPay">去结算</view>
+      </view>
+    </view>
+
+    <view class="car-empty" wx:if="{{!carDataArr}}">
+      <image class="empty-img" src="https://img.laoliangli.com/label/common/empty_cart.png"/>
+      <view class="empty-text">您的购物车还没有商品，快去选购吧！</view>
+      <button class="go-shopping" bindtap="goShopping">去购物</button>
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+        加载中...
+  </loading>
+</view>

@@ -1,0 +1,402 @@
+/* pages/pay-result/pay-result.wxss */
+@import 'pay-result/pay-result.wxss';
+
+.content {
+  background: #F4F4F4;
+}
+
+.adderss-box {
+  height: 142rpx;
+  padding: 0 26rpx;
+  background-color: #fff;
+  border-top: 1px solid #F4F4F4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add-address {
+  margin: 38rpx 0;
+  font-size: 46rpx;
+  color:rgba(59,59,59,1);
+  padding: 4rpx 25rpx 12rpx 25rpx;
+  background:rgba(244,244,244,1);
+}
+
+.add-text {
+  height: 28rpx;
+  font-size: 30rpx;
+  color:rgba(35,35,35,1);
+  padding: 45rpx 0 56rpx 0;
+  margin-left: 30rpx;
+}
+
+.adderss-box image {
+  width: 13rpx;
+  height: 23rpx;
+  padding: 58rpx 0;
+  margin-left: 400rpx;
+}
+
+.address {
+  height: 150rpx;
+  display: flex;
+  flex-direction: reow;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 0 26rpx;
+  background: #fff;
+  border-top: 1rpx solid #f4f4f4;
+  text-overflow: ellipsis;
+}
+
+.address-left-img {
+  width: 29rpx;
+  height: 35rpx;
+  margin-right: 30rpx;
+}
+
+.address-user {
+  width: 56rpx;
+  font-size: 30rpx;
+  color:#232323;
+}
+
+.address-phone {
+  width: 156rpx;
+  font-size: 24rpx;
+  color:#737373;
+  padding-left: 30rpx;
+}
+
+.address-text {
+  width: 600rpx;
+  font-size: 24rpx;
+  color:#343434;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break:break-word;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.address-right-img {
+  margin-left: 20rpx;
+  height: 23rpx;
+  width: 13rpx;
+}
+
+.pay-products {
+  position: relative;
+  margin: 20rpx 0;
+  padding: 39rpx 26rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.pay-products image {
+  width: 161rpx;
+  height: 161rpx;
+  margin-right: 40rpx;
+}
+
+.pay-pro-title {
+  font-size: 30rpx;
+  color:rgba(49,49,49,1);
+}
+
+.pay-pro-price {
+  position: absolute;
+  font-size: 28rpx;
+  left: 30%;
+  bottom: 36rpx;
+  color:rgba(231,44,44,1);
+}
+
+.pay-count {
+  position: absolute;
+  right: 26rpx;
+  bottom: 36rpx;
+  font-size: 28rpx;
+}
+
+.table-box {
+  height: 100rpx;
+  font-size: 28rpx;
+  color:rgba(49,49,49,1);
+  background: #fff;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  padding: 0 26rpx;
+  position: relative;
+}
+
+.table-right {
+  position: absolute;
+  right: 26rpx;
+  top: 30%;
+}
+
+.table-wx-pay {
+  position: absolute;
+  right: 70rpx;
+  top: 30%;
+}
+
+.table-box .pay-right {
+  position: absolute;
+  right: 26rpx;
+  top: 40%;
+  width: 13rpx;
+  height: 23rpx;
+}
+
+.pay-tabbar-box {
+  position: fixed;
+  bottom: 0;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tabbar-left {
+  width: 530rpx;
+  font-size: 30rpx;
+  margin-left: 26rpx;
+}
+
+.pay-money {
+  color: #E72C2C;
+}
+
+.tabbar-pay {
+  width: 220rpx;
+  background-color: #E72C2C;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 500;
+  border-radius: 0;
+  line-height: 98rpx;
+  height: 98rpx;
+}
+
+textarea{
+  width: 710rpx;
+  color: rgba(49,49,49,1);
+  font-size: 28rpx;
+  padding: 20rpx;
+  margin-bottom: 160rpx;
+  background: #f4f4f4;
+}
+
+.message-tap {
+  margin-bottom: 160rpx;
+}
+
+/* 点击支付弹窗部分 */
+
+.header-row {
+  font-size: 38rpx;
+  color:#3A3A3A;
+  padding: 49rpx 0;
+  text-align: center;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.coupon-box {
+  display: flex;
+  flex-direction: row; 
+  font-size: 30rpx;
+  color:#3A3A3A;
+  padding: 11rpx 26rpx 60rpx 26rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #fff;
+  z-index: 100;
+}
+
+.body-text {
+  padding-top: 35rpx;
+}
+
+.coupon-text-item {
+  width: 700rpx;
+}
+
+.checkbox {
+  float: right;
+}
+
+.toolbar {
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background:#E72C2C;
+  text-align: center;
+}
+
+.pay-methods {
+  padding: 0 30rpx 100rpx 30rpx;
+}
+
+.pay-methods-box {
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  clear: both;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.pay-methods-title {
+  font-size: 28rpx;
+}
+
+.pay-methods-sub {
+  padding-left: 20rpx;
+  font-size: 22rpx;
+  color: #767676;
+}
+
+.pay-methods-box .pay-checkbox {
+  float: right;
+  font-size: 22rpx;
+  color: #E72C2C;
+}
+
+.pay-checkbox icon {
+  padding-top: 20rpx;
+}
+
+.hidan-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 20;
+  opacity: 0.3;
+}
+
+.show-box {
+  position: fixed;
+  left: 13.33%;
+  top: 21%;
+  width: 73.33%;
+  background: #fff;
+  z-index: 30;
+  border-radius: 12rpx;
+}
+
+.show-box .header {
+  border-bottom: 1px solid #D6D6D6;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.header .colse {
+  color: #c2c2c2;
+  padding-left: 20rpx;
+}
+
+.header .title {
+  margin-left: 23%;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.body-box {
+  position: relative;
+  text-align: center;
+}
+
+.body-box .body-name {
+  font-size: 28rpx;
+  padding: 30rpx 0;
+}
+
+.body-box .money-box {
+  font-weight: 900;
+}
+
+.money-box .symbol {
+  font-size: 30rpx;
+}
+
+.body-box .phone {
+  width: 100%;
+  text-align: left;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.short-message .codeInput {
+  background: #eee;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius:14rpx;
+}
+
+.short-message .right {
+  color:#fff;
+  font-size: 26rpx;
+  background: #EC4E4E;
+  margin-left: 5%;
+  width: 45%;
+  border-radius:14rpx;
+}
+
+.body-box .short-message {
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+}
+
+.pass-confrim {
+  width: 100%;
+  color: #fff;
+  font-size: 32rpx;
+  background: #EC4E4E;
+  border-radius: 0;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  
+}
+
+.passInput {
+  position: relative;
+  bottom: 0;
+  margin: 30rpx 30rpx 48rpx 30rpx;
+  /* left: -300rpx; */
+  border-radius: 14rpx;
+  background: #F8F8F8;
+  font-size: 30rpx;
+  text-align: left;
+  border: 1px solid #D9D9D9;
+  padding: 0 30rpx;
+  height: 70rpx;
+}
+
+.place {
+  font-size: 26rpx;
+}
+
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}

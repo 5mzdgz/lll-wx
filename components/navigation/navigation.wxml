@@ -1,0 +1,11 @@
+<view style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px">
+  <view class="header" style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px">
+    <view wx:if="{{showIcon}}" class="title-bar">
+      <view class="back" bindtap="headerBack"><image src="https://img.laoliangli.com/label/common/arrow_left.png"></image></view>
+      <view class="line"></view>
+      <view class="home" bindtap="headerHome"><image src="https://img.laoliangli.com/label/common/home_icon.png"></image></view>
+    </view>
+    <view class="header-title">{{title}}</view>
+  </view>
+  <view class="loading-wrap"><image class="loading-gif" src="https://img.laoliangli.com/label/common/loading.gif"></image></view>
+</view>

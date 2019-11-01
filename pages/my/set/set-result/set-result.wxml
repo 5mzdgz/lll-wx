@@ -1,0 +1,26 @@
+<!--pages/my/set-result/set-result.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{navTitle}}"
+> 
+</navigation>
+<view class="content">
+  <view class="container result-container">
+    <view class="set-success">
+      <view class="set-img">
+        <image mode="aspectFill" src="https://img.laoliangli.com/label/wallet/set_success_icon.png"></image>
+      </view>
+      <view class="success-title">{{successTitle}}</view>
+      <view class="success-sub">{{successSub}}</view>
+      <view class="cash-money" wx:if="{{isMode}}">
+        <text class="left">{{leftName}}</text>
+        <text class="right">￥{{money}}</text>
+      </view>
+      <image class="invitation" wx:if="{{isInvitation}}" bindtap="invitationTap" src="https://img.laoliangli.com/label/my/invitation.png"/>
+      <button bindtap="confrimTap">{{confrim}}</button>
+    </view>
+  </view>
+</view>
+

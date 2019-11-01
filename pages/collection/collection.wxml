@@ -1,0 +1,66 @@
+<!--pages/collection/collection.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="我的收藏"
+>
+</navigation>
+<view class="content">
+
+  <view class="container collection-container" wx:if="{{collectionArr.length>0}}">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="collection-item" wx:for="{{collectionArr}}" wx:for-item="collectionData" wx:for-index="index" wx:key="unipue">
+        <view class="collection-box">
+          <view class="col-top-box">{{collectionData.oTime}}</view>
+          <view class="col-btm-box">
+            <label class="checkbox">
+              <checkbox value="{{collectionData.id}}" checked="{{collectionData.checked}}" hidden='hidden' />
+              <icon type="circle" size="23" wx:if="{{!collectionData.checked}}"></icon>
+              <icon type="success" color='red' size="23" wx:if="{{collectionData.checked}}"></icon>
+            </label>
+            <view class="col-img">
+              <image mode='aspectFit' src="{{collectionData.defaultImgUrl}}" />
+            </view>
+            <view class="col-info">
+                <view class="col-left-info">
+                  <view class="col-left-title">{{collectionData.title}}</view>
+                  <!-- <view class="col-left-param" catchtap="sizeTap">请选择规格
+                    <image class="param-right" src="{{collectionData.defaultImgUrl}}" />
+                  </view> -->
+                </view>
+                <view class="col-right-price">￥
+                  <text class="col-price">{{collectionData.nowPrice}}</text>
+                </view>
+                <view class="col-btns">
+                  <text class="del-col" data-index='{{index}}' data-id='{{collectionData.id}}' catchtap="collectionTap">取消收藏</text>
+                  <text class="col-detail" data-id='{{collectionData.id}}' catchtap="detailTap">商品详情</text>
+                </view>
+              </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+
+    <view class="col-pay-tabbar">
+      <view class="col-left-tabbar">
+        <text class="checkboxs">已选{{number}}件</text>
+        <image class="param-right tabbar-right" src="https://img.laoliangli.com/label/my/arrow_right.png" />
+        <view class="tabbar-total-box">
+          <text class="col-pay-total">合计：</text>
+          <text class="col-symbol">￥</text>
+          <text class="col-total-price">{{listTotailPirce}}</text>
+        </view>
+      </view>
+      <text class="col-total-pay" catchtap="totalPayTap">合并支付</text>
+    </view>
+
+  </view>
+
+  <view class="no-coupon" wx:else>
+    <image src="https://img.laoliangli.com/label/common/empty_cart.png"/>
+    <text>你暂时还没有收藏的商品！</text>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

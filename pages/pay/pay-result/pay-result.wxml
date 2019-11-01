@@ -1,0 +1,52 @@
+ 
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="支付结果"
+>
+</navigation>
+<view class="content">
+  <view class="result-box" wx:if="{{isPaySuccess}}">
+    <image class="result-img-success" src="https://img.laoliangli.com/label/common/pay_success.png"/>
+    <view class="success-text">支付成功</view>
+    <view class="pack-text">商家正在打包，请耐心等待</view>
+    <view class="par-checks">
+      <button  bindtap='seeOrderTap'>查看订单</button>
+      <button class="btn-two" bindtap='homeTap'>返回首页</button>
+    </view>
+  </view>
+
+  <view class="result-box" wx:else>
+    <image class="result-img-fail" src="https://img.laoliangli.com/label/common/pay_fail.png"/>
+    <view class="success-text">支付失败</view>
+    <!-- <view class="pack-text">返回查看订单详情</view> -->
+    <view class="par-checks">
+      <button bindtap="seeOrderTap">查看订单</button>
+      <button class="btn-two" catchtap="repaymentTap" disabled="{{disabled}}">重新支付</button>
+    </view>
+  </view>
+
+  <view class="hidan-box" wx:if="{{isShow}}"></view>
+    <view class="show-box" wx:if="{{isShow}}">
+      <view class="header">
+        <text class="colse" catchtap="closeHiddanTap">×</text>
+        <text class="title">请输入支付密码</text>
+      </view>
+      <form bindsubmit="formSubmit">
+      <view class="body-box">
+        <view class="body-name">支付</view>
+        <view class="money-box">
+          <text class="symbol">￥</text>
+          <text class="money">{{total}}</text>
+        </view>
+        <view class="phone">+86 {{sPhone}}</view>
+        <view class="short-message">
+          <input class="codeInput" type="number" name="code" value="{{code}}" maxlength='4' placeholder='请输入短信验证码'/>
+          <text class="right send" disabled='{{shortDisabled}}' bindtap='getVerificationCode'>{{codename}}</text>
+        </view>
+        <input class="passInput" type="text" name="payPassword" password="true" focus='{{payFocus}}' maxlength="16" placeholder-class='place' placeholder='请输入交易密码' />
+      </view>
+      <button class="pass-confrim" form-type="submit">确定</button>
+      </form>
+    </view>
+</view>

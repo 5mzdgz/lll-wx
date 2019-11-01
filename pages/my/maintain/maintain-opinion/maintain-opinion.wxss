@@ -1,0 +1,124 @@
+/* pages/my/maintain/maintain-opinion/maintain-opinion.wxss */
+
+.score-box {
+  height: 100rpx;
+  margin-top: 4rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25rpx;
+  border-bottom: 1rpx solid #A9A8AD;
+  color: #1E1E1E;
+}
+
+.score-left, .score-right {
+  font-size: 24rpx;
+  width: 140rpx;
+}
+
+.score-right {
+  color: #A9A8AD;
+  text-align: right;
+}
+
+.score-middle {
+  width: 420rpx;
+}
+
+.score-middle text {
+  padding-right: 34rpx;
+  font-size: 40rpx;
+}
+
+
+.icon-pingfen {
+  color: #D5D5D5;
+}
+
+.icon-pingfen_xuanzhong {
+  color: #EC4E4E;
+}
+
+textarea{
+  width: 715rpx;
+  background: #fff;
+  padding: 20rpx 0;
+  margin: 20rpx 25rpx;
+  margin-top: 2rpx;
+  font-size: 26rpx;
+}
+
+.add-photo {
+  display: flex;
+  /* flex-direction: row;占满容器 */
+  flex-wrap: wrap; 
+  white-space:nowrap;
+  /* justify-content: space-between; */
+  overflow: hidden;
+  width: 714rpx;
+  margin: 18rpx 0 50rpx 18rpx;
+  /* background: #fff; */
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #D5D5D5;
+}
+
+.add-photo-item {
+  position: relative;
+  padding: 20rpx 0 20rpx 55rpx;
+}
+
+.add-photo-item icon {
+  position: absolute;
+  top: 2rpx;
+  right: -25rpx;
+}
+
+.add-photo-item .add-img{
+  width: 164rpx;
+  height: 164rpx;
+}
+
+.tap-box {
+  width: 164rpx;
+  height: 164rpx;
+  margin: 20rpx 0 20rpx 55rpx;
+  border: 1rpx dashed #D5D5D5;
+}
+
+.tap-box .tap-img {
+  width: 64rpx;
+  height: 56rpx;
+  padding: 36rpx 0 16rpx 52rpx;
+}
+
+.add-text {
+  font-size:28rpx;
+  color:#A9A8AD;
+  padding-left: 28rpx;
+}
+
+button {
+  width: 152rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  color: #fff;
+  background: #EC4E4E;
+  font-size: 28rpx;
+  float: right;
+  margin-right: 26rpx;
+}
+
+.confrim-opinion::after{
+  border: none;
+  border-radius: 0;
+}
+
+.opinion-success image {
+  width: 622rpx;
+  height: 596rpx;
+}
+
+.opinion-success icon {
+  padding-top: 36rpx;
+}

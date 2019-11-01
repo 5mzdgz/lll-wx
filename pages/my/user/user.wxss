@@ -1,0 +1,106 @@
+page{ 
+  background: #f9f9f9;
+}
+
+.user-info-box {
+  position: relative;
+}
+
+.change-head-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 38rpx;
+  left: 278rpx;
+  z-index: 20;
+}
+
+.change-head-img .user-img {
+  background: #fff;
+  width: 196rpx;
+  height: 196rpx;
+  border-radius: 100%;
+  box-shadow:0px 6px 12px rgba(0,0,0,0.16);
+}
+
+.change-head-img .text {
+  padding-top: 20rpx;
+  font-size: 20rpx;
+}
+
+.item-box {
+  position: absolute;
+  width: 95%;
+  height: 542rpx;
+  overflow: hidden;
+  margin-left: 2.5%;
+  margin-top: 124rpx;
+  border-radius: 24rpx;
+  background: #fff;
+  box-shadow:0px 6px 12px rgba(0,0,0,0.16);
+}
+
+.user-items {
+  margin: 0 32rpx;
+  border-bottom: 1px solid #D6D6D6;
+  padding: 50rpx 0 10rpx 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.nick-items {
+  margin-top: 170rpx;
+}
+
+.autograph-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.autograph-box .user-left {
+  padding-right: 30rpx;
+}
+
+.user-left{
+  font-size: 30rpx;
+  color: #C2C2C2;
+  padding-right: 90rpx;
+}
+
+.user-right {
+  width: 480rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+.user-right-img {
+  position: absolute;
+  right: 0;
+}
+
+.textcolor {
+  color: rgb(175, 166, 166);
+}
+
+.user-items .user-right-img {
+  width: 16rpx;
+  height: 25rpx;
+}
+
+.user-right-autograph {
+  width: 480rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}

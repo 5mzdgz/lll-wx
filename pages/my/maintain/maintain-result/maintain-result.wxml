@@ -1,0 +1,26 @@
+<!--pages/my/maintain/maintain-result/maintain-result.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{navTitle}}"
+>
+</navigation>
+<view class="content">
+  <view class="container result-contaniner">
+    <image class="order-img" wx:if="{{flag=='3'}}" src="https://img.laoliangli.com/label/common/confrim_save.png"/>
+    <image class="success-img" wx:if="{{flag=='1'||flag=='4'}}" src="https://img.laoliangli.com/label/common/pay_success.png"/>
+    <image class="fail-img" wx:if="{{flag=='2'}}" src="https://img.laoliangli.com/label/common/pay_fail.png"/>
+    <view class="result-title">{{resultTitle}}</view>
+    <view class="result-subTitle">{{subTitle}}</view>
+    <view class="result-subTitle">{{cTitle}}</view>
+    <view class="result-btn" wx:if="{{flag=='3'||flag=='4'}}">
+      <button class="home-btns" catchtap="goHomeTap">返回首页</button>
+      <button class="check-btns" catchtap="goMatOrderTap">订单详情</button>
+    </view>
+    <view class="result-btn" wx:if="{{flag=='2'}}">
+      <button class="home-btns" catchtap="goMatOrderTap">订单详情</button>
+      <button class="check-btns" disabled="{{disabled}}" catchtap="repaymentMatTap">重新支付</button>
+    </view>
+    <button class="express-number" wx:if="{{flag=='1'}}" catchtap="goExpressNumber">前往填写快递单号</button>
+  </view>
+</view>

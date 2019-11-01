@@ -1,0 +1,122 @@
+/* pages/my/address/address.wxss */
+.content {
+
+}
+
+.address-container {
+  background: #F9F9F9;
+  padding-top: 1rpx;
+}
+
+.address-box {
+  background: #fff;
+  padding: 0 36rpx;
+  height: 250rpx;
+  margin: 7rpx 0;
+}
+
+.address-top {
+  text-align: left;
+  padding-top: 16rpx;
+  padding-bottom: 7rpx;
+}
+
+.user-name {
+  height:40rpx;
+  font-size:28rpx;
+  line-height:50rpx;
+  color:rgba(0,0,0,1);
+  padding: 32rpx 28rpx 0 0;
+}
+
+.user-phone {
+  width: 132rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  line-height: 36rpx;
+  color:rgba(149,149,149,1);
+}
+
+.address-del {
+  color: rgba(149,149,149,1);
+  float: right;
+  width: 20px;
+  height: 20px;
+}
+
+.address-info {
+  width: 676rpx;
+  height: 80rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color:rgba(0,0,0,1);
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  word-break:break-word;
+  white-space: normal !important;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.address-bottom {
+  border-top: 3rpx solid #E2E2E2;
+}
+
+.checkbox icon {
+  float: left;
+  padding-top: 14rpx;
+}
+
+.set-subtitle, .set-address{
+  height:60rpx;
+  font-size:24rpx;
+  line-height:60rpx;
+  color:#919191;
+  padding-top: 3rpx;
+}
+
+.set-subtitle{
+  float: left;
+  padding-left: 8rpx;
+}
+
+.select_set {
+  color: #E72C2C;
+}
+
+.set-address {
+  float: right;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20rpx;
+  left: 120rpx;
+  width:510rpx;
+  height:74rpx;
+  line-height: 74rpx;
+  background:#8E7C77;
+  border-radius:12rpx;
+  color: #fff;
+}
+
+.empty-address {
+  background: #fff;
+}
+
+.empty-address image {
+  width: 318rpx;
+  height: 260rpx;
+  margin: 112rpx 0 66rpx 216rpx;
+}
+
+.empty-address .empty-text {
+  width:378rpx;
+  height:50rpx;
+  font-size:36rpx;
+  line-height:70rpx;
+  color:#8D8D8D;
+  text-align: center;
+  margin-left: 186rpx;
+}

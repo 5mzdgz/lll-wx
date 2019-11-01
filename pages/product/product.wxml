@@ -1,0 +1,113 @@
+<!--pages/product/product.wxml-->
+<import src="detail-picture/detail-picture.wxml" />
+
+<navigation id='Navigation' show-icon='{{showIcon}}' title="">
+</navigation>
+<view class="content">
+
+  <view class="container detail-container" hidden="{{!loadingHidden}}">
+    <view class="detail">
+      <view class="swiper-container">
+        <swiper class="swiper" interval="5000" duration="500" bindchange="swiperChange">
+          <swiper-item class="banner-item" data-id="" wx:if="{{videoUrl}}">
+            <view wx:if="{{show}}"  bindtap="playvedio" class='coversrc' style='position:relative'>
+              <image class='img' src="{{mainArr[0].imgUrl}}"></image>
+              <view class='playbtn'>
+                <image src='https://img.laoliangli.com/label/common/play_icon.png'></image>
+                <!-- <text class="iconfont icon-bofanganniu"></text> -->
+              </view>
+            </view>
+            <video id="myVideo" src="{{videoUrl}}" poster='{{mainArr[0].imgUrl}}' enable-danmu="{{false}}" danmu-btn="{{false}}" controls object-fit="cover" bindplay='bindplay' bindpause='bindpause' bindended='bindend' bindtimeupdate="bindtimeupdate" wx:else>
+            </video>
+          </swiper-item>
+          <block wx:for="{{sliderArr}}" wx:key="unique">
+            <swiper-item class="banner-item" data-id="">
+              <image class="item-image" mode='scaleToFill' src="{{item.imgUrl}}" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="dots">
+          <block wx:for="{{sliderArr}}" wx:key="unique">
+            <view class="dot{{index == swiperCurrent ? ' active ' : ''}}"></view>
+          </block>
+        </view>
+      </view>
+
+      <view class="detail-box">
+        <view class="detail-left-box">
+          <view class="left-title">{{idDetailData.title}}</view>
+          <view class="left-pirce">￥{{idDetailData.nowPrice}}</view>
+          <view class="left-express">快递：包邮</view>
+        </view>
+        <button class="detail-right-box" open-type='share'>
+          <image src="https://img.laoliangli.com/label/my/share_icon.png" />
+          <text class="share">分享</text>
+        </button>
+ 
+      </view>
+
+      <view class="detail-pictrue">
+        <template is="detailPicture" data="{{detailArr:detailArr}}" />
+      </view>
+
+    </view>
+
+    <view class="detail-tabbar">
+      <view class="detail-img">
+        <image class="car-img" bindtap="goCarTap" src="https://img.laoliangli.com/label/my/cart_icon.png" />
+        <button class="comment-img" open-type="contact">
+          <image class="button-img" src="https://img.laoliangli.com/label/my/info_icon.png" /> 
+        </button>
+        <view class="like-box {{isCollection?'background-img':''}}">
+          <image class="like-img" bindtap="onCollectionTap" src="https://img.laoliangli.com/label/my/like_icon.png" />
+        </view>
+      </view>
+      <text class="detail-add" bindtap='clickme'>加入购物车</text>
+      <text class="detail-purchase" data-id="{{idDetailData.id}}" bindtap="immePay">立即购买</text>
+    </view>
+
+    <view class='mask-layer' wx:if="{{showPop}}" bindtap='hideModal'></view>
+    <view class='pop-add-cart pop-common' wx:if="{{showPop}}" animation='{{animationData}}'>
+      <view class='header row'>
+        <image class="header-img" src="{{smallImg.imgUrl}}" />
+        <view class="header-right">
+          <view class="header-title">{{idDetailData.title}}</view>
+          <view class="header-size" wx:for="{{idDetailData.attributes}}" wx:key="unipue">{{item.keyName}}: {{item.valueName}}</view>
+          <view class="header-price">￥{{idDetailData.nowPrice}}</view>
+        </view>
+        <image bindtap="close" class="close" src="https://img.laoliangli.com/label/common/close_icon.png" />
+      </view>
+      <view class="body-info">
+        <view class="commodity_attr_list">
+          <!--每组属性-->
+          <view class="attr_box" wx:for="{{attributes}}" wx:for-item="attrValueObj" wx:for-index="attrIndex" wx:key="unipue">
+            <!--属性名-->
+            <view class="attr_name">{{attrValueObj.keyName}}</view>
+            <!--属性值-->
+            <view class="attr_value_box">
+              <!--每个属性值-->
+              <view class="attr_value {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
+                data-value="{{value}}" data-key="{{attrValueObj.keyName}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex" wx:key="unipue">{{value}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="shop-box">
+          <text class="shop-count">购买数量</text>
+          <view class="shop-right-count">
+            <text class="shop-reduce {{number==1?'reduce-one':''}}" bindtap="onReduce">-</text>
+            <text class="shop-counts">{{number}}</text>
+            <text class="shop-add" bindtap="onAdd">+</text>
+          </view>
+        </view>
+      </view>
+      <button class='footer toolbar' bindtap="submit">
+        确定
+      </button>
+    </view>
+  </view>
+
+  <loading hidden="{{loadingHidden}}">
+      加载中...
+  </loading>
+
+</view>

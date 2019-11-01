@@ -1,0 +1,152 @@
+.clause-content {
+  width: 490rpx;
+  height: 716rpx;
+  border: 1px solid #B9B9B9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clause-title {
+  font-size: 34rpx;
+  padding-bottom: 20rpx;
+  color: #000;
+}
+
+.clause-p {
+  text-align: justify;
+  font-size: 18rpx;
+  padding: 0 18rpx 0 18rpx;
+  color: #464646;
+}
+
+.clause-p::after{
+  /* width: 100%; */
+  display: inline-block;
+  content: '';  
+}
+
+.clause-p:nth-child(2) {
+  text-indent: 38rpx;
+}
+
+.clause-p text {
+  color: #000;
+  font-weight: bold;
+}
+
+.clause-sub {
+  font-size: 22rpx;
+  color: #000;
+  font-weight: bold;
+  padding: 16rpx 0;
+}
+
+.clause-p-title {
+  font-size: 20rpx;
+  color: #000;
+  font-weight: bold;
+  padding: 8rpx 0;
+  margin-left: 18rpx;
+}
+
+.table {
+  border: 1px solid #dadada;
+  border-right:0;
+  border-bottom: 0;
+  margin: 10rpx 0 10rpx 18rpx;
+  text-align: left;
+  width: 452rpx;
+}
+
+.tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16rpx;
+}
+
+.tr:last-child {
+  font-weight: bold;
+}
+
+.th,.td{
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  width: 100%;
+}
+.th1, .td1 {
+  width: 120rpx;
+}
+
+.th3, .td3{
+  width: 136.2rpx;
+}
+
+.confrim-save {
+  height: 74rpx;
+  line-height: 74rpx;
+  color: #fff;
+  background: #9B9B9B;
+  width: 100%;
+}
+
+.clause-box icon {
+  padding-top: 70rpx;
+}
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+checkbox-group {
+  width: 100%;
+  font-size: 18rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*checkbox 整体大小  */
+checkbox {
+  /* width: 240rpx;
+  height: 90rpx; */
+  margin: 15rpx 0;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 20rpx;
+  height: 20rpx;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #FF525C;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 14rpx;
+  height: 14rpx;
+  line-height: 14rpx;
+  text-align: center;
+  font-size: 16rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-selected {
+  background: #EC4E4E;
+}

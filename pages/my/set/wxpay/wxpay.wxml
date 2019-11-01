@@ -1,0 +1,36 @@
+<!--pages/my/set/wxpay/wxpay.wxml-->
+<!--pages/my/alipay/alipay.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="设置微信"
+>
+</navigation>
+<view class="content">
+  <view class="container bank-container">
+    <form bindsubmit="formSubmit">
+      <view class="bank-item">
+        <view class="item-top">
+          <text>真实姓名</text>
+          <input type='text' name="userName" value="{{userName}}" placeholder='请输入姓名'/>
+        </view>
+        <view class="item-bottom">
+          <text>微信号</text>
+          <input type='text' name="idCard" value="{{idCard}}" maxlength="32" placeholder='请输入微信号'/>
+        </view>
+      </view>
+      <view class="bank-item">
+        <view class="item-top">
+          <text>+86 {{sPhone}}</text>
+          <text class="right send" disabled='{{disabled}}' bindtap='getVerificationCode'>{{codename}}</text>
+        </view>
+        <view class="item-bottom">
+          <text>短信验证码</text>
+          <input type="number" name="code" value="{{code}}" maxlength='4' placeholder='请输入4位短信验证码'/>
+        </view>
+      </view>
+      <button form-type="submit" disabled='{{isDisabled}}'>完成</button>
+    </form>
+  </view>
+</view>
+

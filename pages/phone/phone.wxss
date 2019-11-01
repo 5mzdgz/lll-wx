@@ -1,0 +1,40 @@
+/* pages/phone/phone.wxss */
+
+.phone {
+  width: 582rpx;
+  height: 52rpx;
+  margin-top: 160rpx; 
+  border-bottom: 1rpx solid #E6E6E6;
+  margin-left: 84rpx;
+}
+
+.btn-login {
+  color:#fff;
+  font-size: 36rpx;
+  width: 514rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  border-radius: 38rpx;
+  margin-top: 106rpx;
+  background: #8E7C77;
+}
+
+.send-code {
+  width: 582rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #E6E6E6;
+  margin-left: 84rpx;
+  padding-top: 56rpx;
+}
+
+.code {
+  width: 400rpx;
+}
+
+.send {
+  width: 180rpx;
+  color: #80B4F0;
+  font-size: 28rpx;
+  border: none;
+}

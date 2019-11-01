@@ -1,0 +1,140 @@
+/* pages/my/coupon-product/coupon-product.wxss */
+.content {
+  background: #f6f6f6;
+}
+
+.product-list {
+  padding-bottom: 100rpx;
+}
+
+.category-type-box {
+  background-color: #f6f6f6;
+  border-top-left-radius: 60rpx;
+  border-top-right-radius: 60rpx;
+  text-align: center;
+}
+
+.top-type-box {
+  font-size: 30rpx;
+  color: #888;
+  padding: 20rpx 0 5rpx 0;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.top-type-box .text-box {
+  display: flex;
+  flex-direction: row;
+  width: 150rpx;
+  margin: 0 18rpx;
+}
+
+.is_select {
+  color: #C26247;
+}
+
+.select_price {
+  color: #ccc;
+}
+
+.top-type-box .text-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 150rpx;
+  margin: 0 18rpx;
+}
+
+.top-type-box .text-box:nth-child(1) {
+  margin-left: 80rpx;
+}
+
+.desc-aesc {
+  width: 26rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.price-desc {
+  width: 0;
+  height: 0;
+  border: 8rpx solid;
+  border-color: transparent transparent #888;
+}
+
+.price-aesc {
+  margin-top: 8rpx;
+  transform: rotate(180deg);
+  width: 0;
+  height: 0;
+  border: 8rpx solid;
+  border-color: transparent transparent #888;
+}
+
+.select_price {
+  border-color: transparent transparent #C26247;
+}
+
+.product-list {
+  display: flex; 
+  flex-wrap: wrap;
+  white-space:nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-item {
+  /* float: left; */
+  display: inline-block; 
+  width: 340rpx;
+  background-color: #fff;
+  margin: 3%;
+  overflow: hidden;
+  /* white-space:nowrap; */
+  box-sizing: border-box;
+}
+.product-item:nth-child(2n+2) {
+  margin-left: 0;
+}
+.product-item:nth-child(n) {
+  margin-bottom: 0;
+}
+
+.product-item-img {
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.product-item-bottom {
+  text-align: center;
+  width: 300rpx;
+}
+
+.product-title {
+  font-size: 26rpx;
+  color: rgb(47, 47, 47);
+  width: 300rpx;
+  margin-left: 20rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.product-price {
+  font-size: 24rpx;
+  color: rgb(150, 135, 131);
+  margin-top: 15rpx;
+} 
+
+.more-goods {
+  font-size: 32rpx;
+  margin: 40rpx 0 0 250rpx;
+}

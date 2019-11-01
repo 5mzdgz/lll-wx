@@ -1,0 +1,200 @@
+/* pages/home/home.wxss */
+@import "../common/recommend/recommend-pro.wxss";
+
+.content {
+  text-align: center
+}
+
+.swiper-container{
+  position: relative;
+  background: #fff;
+}
+
+swiper{
+  height: 476rpx;
+}
+
+.item-image {
+  position: absolute;
+  width: 630rpx;
+  height: 378rpx;
+  bottom: 0;
+  left: 0;
+  border-radius: 16rpx;
+}
+
+.active_img {
+  opacity: 1;
+  z-index: 10;
+  height: 476rpx;
+  width: 630rpx;
+  transition: all 0.2s ease-in 0s;
+}
+
+.swiper-container .dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+}
+.swiper-container .dots .dot{
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #e0dfdf;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+.swiper-container .dots .dot.active{
+  width: 38rpx;
+  background: #fff;
+}
+
+.new-products {
+  background: #fff;
+  padding-top: 10rpx;
+}
+
+.new-title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 107rpx;
+  height: 2rpx;
+  background: #707070;
+}
+
+.new-title {
+  padding: 0 16rpx;
+}
+
+.new-bottom {
+  font-size: 16rpx;
+}
+
+.swiper-box {
+  height: 540rpx;
+  margin-top: 16rpx;
+}
+
+.new-image {
+  position: absolute;
+  bottom: 80rpx;
+  left: 0;
+  width: 418rpx;
+  height: 410rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.15);
+  margin: 0 40rpx;
+}
+
+.new_active_img {
+  opacity: 1;
+  z-index: 10;
+  height: 456rpx;
+  width: 418rpx;
+  transition: all 0.2s ease-in 0s;
+}
+
+.new-info {
+  position: absolute;
+  bottom: 0;
+  left: 40rpx;
+  width: 418rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-info .title {
+  font-size: 22rpx;
+  width: 418rpx;
+  color: #2F2F2F;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+}
+
+.new-info .price {
+  font-size: 18rpx;
+  color: #968783;
+}
+
+.home-recommend {
+  margin-top: 48rpx;
+  padding-bottom: 100rpx;
+}
+
+.recommend-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.recommend-icon {
+  width: 24rpx;
+  height: 12rpx;
+  background: #D7D0CD;
+  margin: 0 12rpx 0 48rpx;
+}
+
+.recommend-title {
+  font-size: 26rpx;
+}
+
+.recommend-products {
+  background-color: #fff;
+}
+
+.more-goods {
+  font-size: 32rpx;
+  padding: 40rpx 0 40rpx 0;
+}
+
+.invitation-pop {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: .6;
+  z-index: 9;
+}
+
+.invitation-box {
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pop-box {
+  width: 78.4%;
+  height: 55.02%;
+}
+
+.pop-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.pop-box icon {
+  padding-top: 70rpx;
+}

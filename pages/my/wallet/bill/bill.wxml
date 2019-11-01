@@ -1,0 +1,33 @@
+<!--pages/my/wallet/bill/bill.wxml-->
+<!--pages/my/wallet/wallet.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="账单"
+>
+</navigation>
+<view class="content">
+  <view class="container bill-container">
+    <view class="bill-box" wx:if="{{billArr.length!=0}}">
+      <!-- <view class="time-total">
+        <view class="time">2019年7月</view>
+        <view class="total">
+          <view class="expenditure">支出 ￥{{expenditure}}</view>
+          <view class="income">收入 ￥{{income}}</view>
+        </view>
+      </view> -->
+      <view class="bill-item" wx:for="{{billArr}}" wx:key="unique" wx:for-item="item">
+        <image class="bill-left" src="{{item.payImg}}"/>
+        <view class="content-box">
+          <view class="content">
+            <view class="title">{{item.description}}</view>
+            <view class="time-sub">{{item.paymentTime}}</view>
+          </view>
+          <view class="money">{{item.consumAmount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="on-bill" wx:if="{{billArr.length==0}}">还没有交易记录哦！</view>
+  </view>
+</view>
+
